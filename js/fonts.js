@@ -1,7 +1,7 @@
 var html = document.documentElement;
 
 var fontsfile = document.createElement('link');
-fontsfile.href = 'css/fonts.css';
+fontsfile.href = pathTemplate + 'css/fonts.css';
 fontsfile.rel = 'stylesheet';
 document.head.appendChild(fontsfile);
 
@@ -9,7 +9,7 @@ if (sessionStorage.fontsLoaded) {
     html.classList.add('fonts-loaded');
 } else {
     var script = document.createElement('script');
-    script.src = 'js/fontfaceobserver.js';
+    script.src = pathTemplate + 'js/fontfaceobserver.js';
     script.async = true;
 
     script.onload = function () {
