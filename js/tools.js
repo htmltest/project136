@@ -53,6 +53,37 @@ $(document).ready(function() {
         curItem.toggleClass('open');
     });
 
+    $('body').on('click', '.catalogue-recommend-menu ul li a', function(e) {
+        var curLi = $(this).parent();
+        if (!curLi.hasClass('active')) {
+            var curTabs = curLi.parents().filter('.catalogue-recommend');
+            curTabs.find('.catalogue-recommend-menu ul li.active').removeClass('active');
+            curLi.addClass('active');
+            var curIndex = curTabs.find('.catalogue-recommend-menu ul li').index(curLi);
+            curTabs.find('.catalogue-recommend-tab.active').removeClass('active');
+            curTabs.find('.catalogue-recommend-tab').eq(curIndex).addClass('active');
+        }
+        e.preventDefault();
+    });
+
+    $('.product-gallery-big-list').slick({
+        infinite: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: false
+    }).on('setPosition', function(event, slick) {
+        var currentSlide = $('.product-gallery-big-list').slick('slickCurrentSlide');
+        $('.product-gallery-preview ul li.active').removeClass('active');
+        $('.product-gallery-preview ul li').eq(currentSlide).addClass('active');
+    });
+
+    $('.product-gallery-preview ul li a').click(function(e) {
+        var curIndex = $('.product-gallery-preview ul li').index($(this).parent());
+        $('.product-gallery-big-list').slick('slickGoTo', curIndex);
+        e.preventDefault();
+    });
+
 });
 
 $(window).on('load resize', function() {

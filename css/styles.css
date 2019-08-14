@@ -179,6 +179,62 @@ ul ul {margin:11px 0}
 .catalogue-history {margin:98px 0 0 0}
 .catalogue-history-title {font-size:22px; font-weight:normal; line-height:26px; color:#2f2f2f}
 
+.product::after {content:""; display:block; clear:both}
+
+.product-gallery {float:left; width:435px; line-height:0; font-size:0; letter-spacing:-1px}
+.product-gallery-big {white-space:nowrap; width:100%; position:relative; overflow:hidden}
+.product-gallery-big-item {display:inline-block; vertical-align:top; width:100%; margin:0; padding:0}
+.product-gallery-big-item img {display:block; width:100%}
+.product-gallery-preview ul {margin:0 -8px; padding:0; list-style:none}
+.product-gallery-preview ul li {display:inline-block; vertical-align:top; width:25%; padding:16px 8px 0 8px; margin:0}
+.product-gallery-preview ul li::before {display:none}
+.product-gallery-preview ul li a {display:block; position:relative}
+.product-gallery-preview ul li a::after {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; border:1px solid #7a34a6; opacity:0; transition:all 0.2s}
+.product-gallery-preview ul li:hover a::after {opacity:0.5}
+.product-gallery-preview ul li.active a::after {opacity:1}
+.product-gallery-preview ul li a img {display:block; width:100%}
+
+.product-info {float:right; width:323px}
+.product-info form {margin:0; padding:0}
+.product-info-art {padding:2px 0 0 0; font-size:14px; line-height:17px; color:#545454}
+.product-info h1 {margin:0; font-size:30px; line-height:36px}
+.product-info-label {font-size:14px; line-height:17px; color:#6b6b6b; margin:16px 0 0 0}
+.product-info-value {font-weight:normal; font-size:14px; line-height:17px; margin:5px 0 0 0; color:#000}
+.product-info-sizes {margin:5px 0 0 0; max-width:238px; font-size:14px; line-height:35px; letter-spacing:0; color:#2f2f2f; text-align:center}
+.product-info-sizes::after {content:""; display:block; clear:both}
+.product-info-size {display:block; float:left; margin:0 -1px -1px 0}
+.product-info-size input {display:none}
+.product-info-size span {display:block; width:39px; height:37px; border:1px solid #c4c4c4; text-decoration:none; color:#2f2f2f; position:relative; cursor:pointer}
+.product-info-size:hover span {z-index:1; border-color:#7a34a6; color:#2f2f2f}
+.product-info-size:active span,
+.product-info-size input:checked+span {background:rgba(122, 52, 166, 0.12); border-color:#c4c4c4; color:#7a34a6}
+
+.product-link-reg {margin:30px 0 0 0; max-width:238px}
+.product-link-reg a {display:block; border:1px solid #7a34a6; background:#7a34a6; eight:37px; text-align:center; font-size:14px; line-height:35px; color:#fff; letter-spacing:0}
+.product-link-reg a:hover {background:rgba(122, 52, 166, 0.12); color:#000}
+.product-link-fast {margin:10px 0 0 0; max-width:238px}
+.product-link-fast a {display:block; border:1px solid #7a34a6; height:37px; text-align:center; font-size:14px; line-height:35px; color:#000; letter-spacing:0}
+.product-link-fast a:hover {background:#7a34a6; color:#fff}
+.product-link-fast a:active {background:#9d21ca; color:#fff}
+.product-link-table {margin:25px 0 0 0; font-size:14px; line-height:17px}
+
+.catalogue-recommend {margin:98px 0 0 0}
+.catalogue-recommend-menu {font-size:22px; line-height:26px}
+.catalogue-recommend-menu ul {margin:0; padding:0; list-style:none; border-bottom:2px solid #d8d8d8}
+.catalogue-recommend-menu ul::after {content:""; display:block; clear:both}
+.catalogue-recommend-menu ul li {float:left; margin:0 0 0 45px; padding:0}
+.catalogue-recommend-menu ul li:first-child {margin:0}
+.catalogue-recommend-menu ul li::before {display:none}
+.catalogue-recommend-menu ul li.active {font-weight:normal}
+.catalogue-recommend-menu ul li a {float:left; color:#888; text-decoration:none; padding:0 0 13px 0; position:relative}
+.catalogue-recommend-menu ul li a:hover {color:#2f2f2f}
+.catalogue-recommend-menu ul li.active a {color:#2f2f2f}
+.catalogue-recommend-menu ul li.active a::after {content:""; display:block; position:absolute; left:0; bottom:-2px; right:0; height:2px; background:#7a34a6}
+
+.catalogue-recommend-tabs {position:relative}
+.catalogue-recommend-tab {position:absolute; left:-9999px; top:-9999px; width:100%; opacity:0; transition:opacity 0.2s}
+.catalogue-recommend-tab.active {position:relative; left:auto; top:auto; opacity:1}
+
 .footer {margin:126px 0 0 0}
 
 .footer-top {padding:0 0 20px 0; border-top:1px solid #ddd}
