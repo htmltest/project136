@@ -156,45 +156,62 @@
             <!-- container -->
             <div class="container">
 
-                <div class="breadcrumbs"><a href="#">Каталог</a><span>–</span><a href="#">Секция</a><span>-</span>Платья</div>
+                <div class="breadcrumbs"><a href="#">Стиль КР</a><span>–</span>Регистрация оптовика</div>
 
-                <h1>Условия работы для оптовиков</h1>
-                <p>Всегда открыты и рады взаимовыгодному сотрудничеству с ритейлерами женской одежды!</p>
+                <h1>Регистрация оптовика</h1>
 
-                <h3>Наши преимущества:</h3>
-                <ul>
-                    <li>Минимальная сумма заказа —  20 000 рублей.</li>
-                    <li>Заказ продукции без привязки к размерным рядам!</li>
-                    <li>Актуальные складские остатки: товар готов к предзаказу и отгрузке на следующий день после оплаты.</li>
-                    <li>Самовывоз или бесплатная доставка до транспортных компаний (в пределах МКАД).</li>
-                    <li>Товарный вид: каждое изделие промаркировано, сертифицировано и имеет индивидуальную упаковку —  вешалку и пакет.</li>
-                    <li>Вы можете поменять 20% товара надлежащего качества в течение 30 дней с момента отгрузки.</li>
-                </ul>
+                <!-- register -->
+                <div class="register">
+                    <form action="#" method="post">
+                        <div class="form-label">E-mail (в качестве логина)<span>*</span></div>
+                        <div class="form-input"><input type="text" name="email" value="" class="required email" /></div>
 
-                <h3>Гибкая система скидок:</h3>
-                <ul>
-                    <li>50 000 руб. – 5%</li>
-                    <li>100 000 руб. – 10%</li>
-                    <li>200 000 руб. – 15%</li>
-                    <li>300 000 руб. – 20%</li>
-                </ul>
+                        <div class="form-label">Пароль<span>*</span></div>
+                        <div class="form-input"><input type="password" name="password" value="" class="required" id="password" /></div>
 
-                <h3>Как начать сотрудничество</h3>
-                <ul>
-                    <li>Мы работаем с представителями на территории России, Белоруссии и Казахстана.</li>
-                    <li>
-                        Подготовьте необходимые документы:
-                        <ul>
-                            <li>ИП: ОГРНИП, ИНН и паспорт</li>
-                            <li>ООО: ОГРН, ИНН/КПП, реквизиты компании, приказ о назначении ГД, паспорт ГД</li>
-                        </ul>
-                    </li>
-                    <li><a href="#"><strong>Пройдите регистрацию</strong></a> в качестве оптовика на сайте.</li>
-                    <li>Дождитесь активации учетной записи (вам придет соответствующее уведомление).</li>
-                    <li><a href="#"><strong>Войдите на сайт</strong></a> под своей учетной записью и оформляйте заказ по оптовым ценам с помощью «корзины».</li>
-                </ul>
+                        <div class="form-label">Подтверждение пароля<span>*</span></div>
+                        <div class="form-input"><input type="password" name="repassword" value="" equalTo="#password" /></div>
 
-                <p>В любой непонятной ситуации – звоните нашему менеджеру по телефону <font style="font-weight:500">+7 (495) 325-35-43</font>, он обязательно вам поможет!</p>
+                        <div class="form-label">Фамилия<span>*</span></div>
+                        <div class="form-input"><input type="text" name="lastname" value="" class="required" /></div>
+
+                        <div class="form-label">Имя<span>*</span></div>
+                        <div class="form-input"><input type="text" name="firstname" value="" class="required" /></div>
+
+                        <div class="form-label">Отчество</div>
+                        <div class="form-input"><input type="text" name="middlename" value="" /></div>
+
+                        <div class="form-label">Город<span>*</span></div>
+                        <div class="form-input"><input type="text" name="city" value="" class="required" /></div>
+
+                        <div class="form-label">ИНН<span>*</span></div>
+                        <div class="form-input"><input type="text" name="inn" value="" class="required" /></div>
+
+                        <div class="form-label">ОГРН/ОГРНИП<span>*</span></div>
+                        <div class="form-input"><input type="text" name="ogrn" value="" class="required" /></div>
+
+                        <div class="form-label">Контактный телефон<span>*</span></div>
+                        <div class="form-input"><input type="text" name="phone" value="" class="required phoneRU" /></div>
+
+                        <div class="form-label">Приложить файл (фотографию, документ)</div>
+                        <div class="form-files">
+                            <div class="form-file">
+                                <div class="form-file-input">Прикрепить файл<input type="file" name="files[]" /></div>
+                                <div class="form-file-name"><div class="form-file-name-text"></div><div class="form-file-name-remove"></div></div>
+                            </div>
+                        </div>
+
+                        <div class="form-checkbox"><label><input type="checkbox" name="policy" checked="checked" class="required" /><span>Cогласия с обработкой персональных данных</span></label></div>
+
+                        <div class="form-captcha">
+                            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+                            <div class="g-recaptcha" data-sitekey="6Ldk5DMUAAAAALWRTOM96EQI_0OApr59RQHoMirA"></div>
+                        </div>
+
+                        <div class="form-submit"><input type="submit" value="Отправить" class="btn" /></div>
+                    </form>
+                </div>
+                <!-- register END -->
 
             </div>
             <!-- container END -->
