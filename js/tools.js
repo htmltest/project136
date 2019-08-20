@@ -132,6 +132,60 @@ $(document).ready(function() {
         dots: true
     });
 
+    $('.gallery').each(function() {
+        var curGallery = $(this);
+        curGallery.find('.gallery-big').slick({
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            prevArrow: '<button type="button" class="slick-prev"><svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.23185 7.5L9 13.7832L8.05645 15L-3.27835e-07 7.5L8.05645 -3.52159e-07L9 1.21676L2.23185 7.5Z" /></svg></button>',
+            nextArrow: '<button type="button" class="slick-next"><svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.76815 7.5L-7.94116e-07 1.21676L0.943547 1.05648e-06L9 7.5L0.943549 15L8.5378e-07 13.7832L6.76815 7.5Z" /></svg></button>',
+            dots: false
+        }).on('setPosition', function(event, slick) {
+            var currentSlide = curGallery.find('.gallery-big').slick('slickCurrentSlide');
+            curGallery.find('.gallery-preview .gallery-preview-item.active').removeClass('active');
+            curGallery.find('.gallery-preview .gallery-preview-item').eq(currentSlide).addClass('active');
+        });
+        curGallery.find('.gallery-preview').slick({
+            infinite: false,
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            arrows: false,
+            dots: false
+        });
+        curGallery.find('.gallery-preview-item a').click(function(e) {
+            var curIndex = curGallery.find('.gallery-preview-item').index($(this).parent());
+            curGallery.find('.gallery-big').slick('slickGoTo', curIndex);
+            e.preventDefault();
+        });
+    });
+
+    $('body').on('click', '.window-link', function(e) {
+        windowOpen($(this).attr('href'));
+        e.preventDefault();
+    });
+
+    $('body').on('keyup', function(e) {
+        if (e.keyCode == 27) {
+            windowClose();
+        }
+    });
+
+    $(document).click(function(e) {
+        if ($(e.target).hasClass('window')) {
+            windowClose();
+        }
+    });
+
+    $(window).resize(function() {
+        windowPosition();
+    });
+
+    $('body').on('click', '.window-close', function(e) {
+        windowClose();
+        e.preventDefault();
+    });
+
 });
 
 $(window).on('load resize', function() {
