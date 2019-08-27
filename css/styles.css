@@ -51,6 +51,19 @@ form {margin:46px 0; padding:0}
 .form-input textarea.error {border-color:#ff2f2f}
 .form-input label.error {display:none !important}
 
+.form-select {margin:9px 0 0 0}
+.form-select select {vertical-align:top; box-sizing:border-box; margin:0; padding:10px 12px; outline:none; width:100%; height:46px; border:1px solid #d6d6d6; -webkit-appearance:none; color:#000; font:300 16px/24px Tahoma, Geneva, sans-serif; border-radius:0}
+.fonts-loaded .form-select select {font-family:Rubik, sans-serif}
+
+.form-number {margin:9px 0 0 0}
+.form-number::after {content:""; display:block; clear:both}
+.form-number-dec {float:left; width:46px; height:46px; position:relative; margin:0 -1px 0 0; z-index:1; border:1px solid #d6d6d6; text-align:center; font-weight:500; font-size:20px; line-height:30px; cursor:pointer; color:#7a34a6; transition:all 0.2s}
+.form-number-dec:hover {border-color:#7a34a6}
+.form-number .form-input {float:left; margin:0; width:46px}
+.form-number .form-input input {text-align:center; padding-left:0; padding-right:0}
+.form-number-inc {float:left; width:46px; height:46px; position:relative; margin:0 0 0 -1px; z-index:1; border:1px solid #d6d6d6; text-align:center; font-weight:500; font-size:20px; line-height:44px; cursor:pointer; color:#7a34a6; transition:all 0.2s}
+.form-number-inc:hover {border-color:#7a34a6}
+
 .form-checkbox {margin:26px 0; font-weight:normal; font-size:16px; line-height:19px; color:#2f2f2f}
 .form-checkbox+.form-checkbox {margin-top:-16px}
 .form-checkbox::after {content:""; display:block; clear:both}
@@ -182,6 +195,8 @@ form {margin:46px 0; padding:0}
 .catalogue::after {content:""; display:block; clear:both}
 
 .catalogue-menu {float:left; width:215px; margin:3px 0 0 0}
+.catalogue-menu-inner {position:relative}
+.catalogue-menu.fixed .catalogue-menu-inner {position:fixed; top:20px}
 .catalogue-menu-inner ul {margin:0; padding:0; list-style:none; font-size:16px; font-weight:normal; line-height:19px}
 .catalogue-menu-inner ul li {margin:10px 0 0 0; padding:0}
 .catalogue-menu-inner ul li:first-child {margin:0}
@@ -205,11 +220,30 @@ form {margin:46px 0; padding:0}
 
 .favourite .catalogue-container {float:none; width:auto}
 
+.catalogue-sort {margin:40px 0 0 -10px}
+.catalogue-sort::after {content:""; display:block; clear:both}
+.catalogue-sort-select {float:left; position:relative; margin:0 0 0 10px}
+.catalogue-sort-select-value {border:1px solid #d8d8d8; cursor:pointer; padding:0 38px 0 25px; font-size:14px; height:37px; line-height:35px; transition:all 0.2s; position:relative}
+.catalogue-sort-select-value::after {content:""; display:block; width:13px; height:8px; background:url(../images/arrow.svg) no-repeat; position:absolute; right:13px; top:15px}
+.catalogue-sort-select-value:hover,
+.catalogue-sort-select.active .catalogue-sort-select-value {border-color:#7a34a6}
+.catalogue-sort-select-list {display:none; z-index:99; position:absolute; left:0; top:100%; width:100%; background:#fff; border:1px solid #d8d8d8; border-top:none}
+.catalogue-sort-select-list ul {margin:0; padding:0; list-style:none}
+.catalogue-sort-select-list ul li {margin:0; padding:0; border-top:1px solid #d8d8d8}
+.catalogue-sort-select-list ul li:first-child {border-top:none}
+.catalogue-sort-select-list ul li::before {display:none}
+.catalogue-sort-select-list ul li a {display:block; padding:0 25px; font-size:14px; height:37px; line-height:35px; color:#000}
+.catalogue-sort-select-list ul li a:hover {background:#d8d8d8}
+.catalogue-sort-select.open .catalogue-sort-select-list {display:block}
+.catalogue-sort-item {float:left; position:relative; margin:0 0 0 10px; border:1px solid #d8d8d8; cursor:pointer; padding:0 25px; font-size:14px; height:37px; line-height:35px; color:#000}
+.catalogue-sort-item:hover,
+.catalogue-sort-item.active {border-color:#7a34a6; text-decoration:none; color:#000}
+
 .catalogue-list {margin:10px -10px 0 -10px; font-size:0; line-height:0; letter-spacing:-1px}
 .catalogue-item {display:inline-block; vertical-align:top; width:33.33%; padding:20px 10px 0 10px}
 .favourite .catalogue-item {width:25%}
 .catalogue-item-inner {border:1px solid #e5e5e5; position:relative}
-.catalogue-item-inner:hover {z-index:1}
+.catalogue-item-inner:hover {z-index:3}
 .catalogue-item-inner-bg {display:block; visibility:hidden; position:absolute; left:-118px; top:-1px; right:-1px; border:1px solid #e5e5e5; height:100%; background:#fff; box-shadow:0px 0px 40px rgba(79, 79, 79, 0.2); opacity:0; transition:opacity 0.2s}
 .catalogue-item-inner:hover .catalogue-item-inner-bg {opacity:1; visibility:visible}
 .catalogue-item-previews {position:absolute; left:-118px; top:-1px; min-height:calc(100% + 2px); border:1px solid #e5e5e5; background:#fff; display:none; padding:20px; width:118px}
@@ -229,6 +263,7 @@ form {margin:46px 0; padding:0}
 .catalogue-item-size {display:block; float:left; width:39px; height:37px; border:1px solid #c4c4c4; margin:0 -1px -1px 0; text-decoration:none; color:#2f2f2f; position:relative}
 .catalogue-item-size:hover {z-index:1; border-color:#7a34a6; color:#2f2f2f}
 .catalogue-item-size:active {background:rgba(122, 52, 166, 0.12); border-color:#c4c4c4; color:#7a34a6}
+.catalogue-item-size em {display:block; position:absolute; right:-5px; top:-6px; height:14px; font-size:9px; line-height:14px; letter-spacing:0; color:#fff; background:#7a34a6; border-radius:50%; padding:0 4px; min-width:14px; z-index:2; font-style:normal; font-weight:500}
 .catalogue-item-reg {padding:19px 20px 27px 20px}
 .catalogue-item-title+.catalogue-item-reg {padding-top:7px}
 .catalogue-item-reg a {display:block; border:1px solid #7a34a6; height:37px; text-align:center; font-size:14px; line-height:35px; color:#000; letter-spacing:0}
@@ -242,6 +277,17 @@ form {margin:46px 0; padding:0}
 .catalogue-item-favourite:hover::before {opacity:0.3}
 .catalogue-item-favourite:active::before {opacity:1}
 .catalogue-item.in-favourite .catalogue-item-favourite::before {opacity:1}
+.catalogue-item-discount {position:absolute; left:10px; top:10px; width:25px; height:25px; background:#7a34a6; border-radius:50%; color:#fff; text-align:center; font-size:17px; line-height:25px; font-weight:500; letter-spacing:0}
+.catalogue-item-ctrl {padding:19px 20px 27px 20px}
+.catalogue-item-ctrl::after {content:""; display:block; clear:both}
+.catalogue-item-cart {float:left; width:101px}
+.catalogue-item-cart a {display:block; border:1px solid #7a34a6; height:37px; text-align:center; font-size:14px; line-height:35px; color:#000; letter-spacing:0}
+.catalogue-item-cart a:hover {background:#7a34a6; color:#fff}
+.catalogue-item-cart a:active {background:#9d21ca; color:#fff}
+.catalogue-item-price {float:left; padding:6px 0 0 24px; font-size:20px; line-height:24px; font-weight:normal; color:#7a34a6; letter-spacing:0}
+.catalogue-item-price-discount {padding-top:0; margin:-3px 0 -4px 0}
+.fonts-loaded .catalogue-item-price span {font-family:Roboto, sans-serif}
+.catalogue-item-price em {display:block; font-style:normal; font-size:14px; line-height:17px; color:#6b6b6b; font-weight:300; padding:3px 0 0 0; text-decoration:line-through}
 
 .catalogue-history {margin:98px 0 0 0}
 .catalogue-history-title {font-size:22px; font-weight:normal; line-height:26px; color:#2f2f2f}
@@ -275,10 +321,23 @@ form {margin:46px 0; padding:0}
 .product-info-size:hover span {z-index:1; border-color:#7a34a6; color:#2f2f2f}
 .product-info-size:active span,
 .product-info-size input:checked+span {background:rgba(122, 52, 166, 0.12); border-color:#c4c4c4; color:#7a34a6}
+.product-info-size em {display:block; position:absolute; right:-5px; top:-6px; height:14px; font-size:9px; line-height:14px; letter-spacing:0; color:#fff; background:#7a34a6; border-radius:50%; padding:0 4px; min-width:14px; z-index:2; font-style:normal; font-weight:500}
+
+.product-info-sizes+.product-info-label {margin:30px 0 0 0}
+.product-info .form-number .form-number-dec {width:37px; height:37px; line-height:20px}
+.product-info .form-number .form-input {float:left; margin:0; width:47px}
+.product-info .form-number .form-input input {text-align:center; font-size:18px; height:37px; padding:5px 0 6px 0; border-color:transparent}
+.product-info .form-number .form-number-inc {width:37px; height:37px; line-height:35px}
+
+.product-info-price {margin:22px 0 0 0; font-size:20px; line-height:24px; font-weight:normal; color:#7a34a6; letter-spacing:0}
+.fonts-loaded .product-info-price span {font-family:Roboto, sans-serif}
+.product-info-price em {display:block; font-style:normal; font-size:14px; line-height:17px; color:#6b6b6b; font-weight:300; padding:3px 0 0 0; text-decoration:line-through}
 
 .product-link-reg {margin:30px 0 0 0; max-width:238px}
-.product-link-reg a {display:block; border:1px solid #7a34a6; background:#7a34a6; eight:37px; text-align:center; font-size:14px; line-height:35px; color:#fff; letter-spacing:0}
+.product-info-price+.product-link-reg {margin:17px 0 0 0}
+.product-link-reg a {display:block; border:1px solid #7a34a6; background:#7a34a6; height:37px; text-align:center; font-size:14px; line-height:35px; color:#fff; letter-spacing:0}
 .product-link-reg a:hover {background:rgba(122, 52, 166, 0.12); color:#000}
+.product-link-reg .btn {width:100%; padding:0; height:37px; line-height:35px; font-size:14px}
 .product-link-fast {margin:10px 0 0 0; max-width:238px}
 .product-link-fast a {display:block; border:1px solid #7a34a6; height:37px; text-align:center; font-size:14px; line-height:35px; color:#000; letter-spacing:0}
 .product-link-fast a:hover {background:#7a34a6; color:#fff}
@@ -538,3 +597,18 @@ form {margin:46px 0; padding:0}
 .window-reg .form-checkbox a:hover {text-decoration:none}
 .window-reg .form-submit {margin:23px 0 0 0; width:auto}
 .window-reg .form-submit .btn {display:inline-block; width:auto; padding:0 20px; font-size:14px; height:37px; line-height:37px}
+
+.window-count {width:373px; padding:45px 0 36px 0}
+.window-count-title {font-size:22px; font-weight:normal; line-height:26px; color:#2f2f2f; text-align:center}
+.window-count form {margin:18px 0 0 0; padding:0}
+.window-count .form-number {margin:0 auto; width:121px}
+.window-count .form-number .form-number-dec {width:37px; height:37px; line-height:20px}
+.window-count .form-number .form-input {float:left; margin:0; width:47px}
+.window-count .form-number .form-input input {text-align:center; font-size:18px; height:37px; padding:5px 0 6px 0; border-color:transparent}
+.window-count .form-number .form-number-inc {width:37px; height:37px; line-height:35px}
+.window-count .form-submit {margin:26px 0 0 0; width:auto; text-align:center; max-width:none}
+.window-count .form-submit .btn {display:inline-block; width:236px; padding:0; font-size:14px; height:37px; line-height:37px}
+
+.window-count .product-info-label {text-align:center}
+.window-count .product-info-sizes {margin-left:auto; margin-right:auto}
+.window-count .product-info-label+.form-number {margin-top:5px}

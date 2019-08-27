@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="css/styles.css" />
         <link rel="stylesheet" href="js/slick/slick.css" />
         <link rel="stylesheet" href="js/drift/drift-basic.min.css" />
+        <link rel="stylesheet" href="js/chosen/chosen.css" />
 
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
@@ -246,6 +247,23 @@
                     <div class="form-label">Имя<span>*</span></div>
                     <div class="form-input"><input type="text" name="firstname" value="" class="required" /></div>
 
+                    <div class="form-label">Город<span>*</span></div>
+                    <div class="form-select">
+                        <select name="city" class="required" data-placeholder="выберите город">
+                            <option value=""></option>
+                            <option value="1">Москва</option>
+                            <option value="2">Санкт-Петербург</option>
+                            <option value="3">Казань</option>
+                        </select>
+                    </div>
+
+                    <div class="form-label">Количество</div>
+                    <div class="form-number">
+                        <div class="form-number-dec">_</div>
+                        <div class="form-input"><input type="text" name="count" value="2" data-min="1" data-max="99" data-step="1" /></div>
+                        <div class="form-number-inc">+</div>
+                    </div>
+
                     <div class="form-label">Приложить файл (фотографию, документ)</div>
                     <div class="form-files">
                         <div class="form-file">
@@ -409,6 +427,7 @@
         <script src="js/validation/messages_ru.js"></script>
         <script src="js/slick/slick.min.js"></script>
         <script src="js/drift/Drift.min.js"></script>
+        <script src="js/chosen/chosen.jquery.min.js"></script>
         <script src="js/tools.js"></script>
 
     </body>

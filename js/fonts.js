@@ -22,11 +22,19 @@ if (sessionStorage.fontsLoaded) {
         var Rubik500 = new FontFaceObserver('Rubik', {
             weight: '500'
         });
+        var Roboto300 = new FontFaceObserver('Roboto', {
+            weight: '300'
+        });
+        var Roboto400 = new FontFaceObserver('Roboto', {
+            weight: '400'
+        });
 
         Promise.all([
             Rubik300.load(),
             Rubik400.load(),
-            Rubik500.load()
+            Rubik500.load(),
+            Roboto300.load(),
+            Roboto400.load()
         ]).then(function () {
             html.classList.add('fonts-loaded');
             sessionStorage.fontsLoaded = true;
