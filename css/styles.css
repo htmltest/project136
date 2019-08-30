@@ -302,7 +302,7 @@ form {margin:46px 0; padding:0}
 .product-gallery-preview ul li {display:inline-block; vertical-align:top; width:25%; padding:16px 8px 0 8px; margin:0}
 .product-gallery-preview ul li::before {display:none}
 .product-gallery-preview ul li a {display:block; position:relative}
-.product-gallery-preview ul li a::after {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; border:1px solid #7a34a6; opacity:0; transition:all 0.2s}
+.product-gallery-preview ul li a::after {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; border:4px solid #7a34a6; opacity:0; transition:all 0.2s}
 .product-gallery-preview ul li:hover a::after {opacity:0.5}
 .product-gallery-preview ul li.active a::after {opacity:1}
 .product-gallery-preview ul li a img {display:block; width:100%}
@@ -497,7 +497,7 @@ form {margin:46px 0; padding:0}
 .gallery-preview {position:relative; overflow:hidden; margin:20px -10px 0 -10px; text-align:center}
 .gallery-preview-item {display:inline-block; vertical-align:top; width:25%; padding:0 10px}
 .gallery-preview-item a {display:block; position:relative}
-.gallery-preview-item a::after {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; border:1px solid #7a34a6; opacity:0; transition:all 0.2s}
+.gallery-preview-item a::after {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; border:4px solid #7a34a6; opacity:0; transition:all 0.2s}
 .gallery-preview-item a:hover::after {opacity:0.5}
 .gallery-preview-item.active a::after {opacity:1}
 .gallery-preview-item img {display:block; width:100%}
@@ -612,3 +612,5 @@ form {margin:46px 0; padding:0}
 .window-count .product-info-label {text-align:center}
 .window-count .product-info-sizes {margin-left:auto; margin-right:auto}
 .window-count .product-info-label+.form-number {margin-top:5px}
+
+.to-window {display:none}

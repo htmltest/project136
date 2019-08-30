@@ -24,7 +24,9 @@ $(document).ready(function() {
     });
 
     $('form').each(function() {
-        initForm($(this));
+        if ($(this).parents().filter('.to-window').length == 0) {
+            initForm($(this));
+        }
     });
 
     $('body').on('click', '.form-file-name-remove', function() {
@@ -159,6 +161,14 @@ $(document).ready(function() {
             curGallery.find('.gallery-big').slick('slickGoTo', curIndex);
             e.preventDefault();
         });
+    });
+
+    $('body').on('click', '.window-link-self', function(e) {
+        var toWindow = $($(this).attr('href'));
+        if (toWindow.length > 0) {
+            windowOpenHTML(toWindow.html());
+        }
+        e.preventDefault();
     });
 
     $('body').on('click', '.window-link', function(e) {
@@ -388,6 +398,42 @@ function windowOpen(linkWindow, dataWindow) {
             initForm($(this));
         });
 
+    });
+}
+
+function windowOpenHTML(htmlWindow) {
+    if ($('html').hasClass('menu-open')) {
+        $('.wrapper').css({'top': 'auto'});
+        $('html').removeClass('menu-open');
+        $(window).scrollTop($('.wrapper').data('curScroll'));
+    }
+
+    if ($('.window').length > 0) {
+        windowClose();
+    }
+
+    var curPadding = $('.wrapper').width();
+    var curWidth = $(window).width();
+    if (curWidth < 480) {
+        curWidth = 480;
+    }
+    var curScroll = $(window).scrollTop();
+    $('html').addClass('window-open');
+    curPadding = $('.wrapper').width() - curPadding;
+    $('body').css({'margin-right': curPadding + 'px'});
+    $('body').append('<div class="window"><div class="window-loading"></div></div>')
+    $('.wrapper').css({'top': -curScroll});
+    $('.wrapper').data('curScroll', curScroll);
+    $('meta[name="viewport"]').attr('content', 'width=' + curWidth);
+
+    $('.window').append('<div class="window-container window-container-preload"><div class="window-content">' + htmlWindow + '<a href="#" class="window-close"></a></div></div>')
+
+    windowPosition();
+
+    $('.window-container-preload').removeClass('window-container-preload');
+
+    $('.window form').each(function() {
+        initForm($(this));
     });
 }
 
