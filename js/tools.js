@@ -1,5 +1,9 @@
 $(document).ready(function() {
 
+    $('.table-scroll').mCustomScrollbar({
+        axis: 'x'
+    });
+
     $.validator.addMethod('phoneRU',
         function(phone_number, element) {
             return this.optional(element) || phone_number.match(/^\+7 \(\d{3}\) \d{3}\-\d{2}\-\d{2}$/);
@@ -289,6 +293,18 @@ $(document).ready(function() {
         }
     });
 
+    $('body').on('click', '.window-table-menu ul li a', function(e) {
+        var curLi = $(this).parent();
+        if (!curLi.hasClass('active')) {
+            $('.window-table-menu ul li.active').removeClass('active');
+            curLi.addClass('active');
+            var curIndex = $('.window-table-menu ul li').index(curLi);
+            $('.window-table-tab.active').removeClass('active');
+            $('.window-table-tab').eq(curIndex).addClass('active');
+        }
+        e.preventDefault();
+    });
+
 });
 
 $(window).on('load resize', function() {
@@ -465,10 +481,10 @@ $(window).on('load resize scroll', function() {
         if (curScroll >= $('.catalogue-menu').offset().top - 20) {
             $('.catalogue-menu').addClass('fixed');
             $('.catalogue-menu-inner').css({'left': $('.catalogue-menu').offset().left, 'top': 20});
-            var curDiff = ($('.catalogue-menu-inner').offset().top + $('.catalogue-menu-inner').height() - curScroll) - ($('.footer').offset().top - curScroll);
+            var curDiff = ($('.catalogue-menu-inner').offset().top + $('.catalogue-menu-inner').height() - curScroll) - ($('.footer').offset().top - curScroll - 40);
             if (curDiff > 0) {
                 $('.catalogue-menu').removeClass('fixed');
-                $('.catalogue-menu-inner').css({'left': 'auto', 'top': $('.footer').offset().top - $('.catalogue-menu').offset().top - $('.catalogue-menu-inner').height()});
+                $('.catalogue-menu-inner').css({'left': 'auto', 'top': $('.footer').offset().top - $('.catalogue-menu').offset().top - $('.catalogue-menu-inner').height() - 40});
             }
         } else {
             $('.catalogue-menu').removeClass('fixed');

@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="js/slick/slick.css" />
         <link rel="stylesheet" href="js/drift/drift-basic.min.css" />
         <link rel="stylesheet" href="js/chosen/chosen.css" />
+        <link rel="stylesheet" href="js/mcustomscrollbar/jquery.mCustomScrollbar.css" />
 
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
@@ -239,6 +240,7 @@
                                         <li><a href="#"><img src="files/product-preview-04.jpg" alt="" /></a></li>
                                     </ul>
                                 </div>
+                                <div class="catalogue-item-discount">%</div>
                             </div>
 
                             <div class="product-info">
@@ -277,7 +279,10 @@
 
                                     <div class="product-info-price">1 200 <span>₽</span> <em>3 200 <span>₽</span></em></div>
 
-                                    <div class="product-link-reg"><input type="submit" value="В корзину" class="btn" /></div>
+                                    <div class="product-link-wrap">
+                                        <div class="product-link-reg loading"><input type="submit" value="В корзину" class="btn" /></div>
+                                        <div class="product-link-favourite"><a href="#" class="product-favourite in-favourite loading"></a></div>
+                                    </div>
                                     <div class="product-link-table"><a href="windows/table.html" class="window-link">Таблица размеров</a></div>
                                 </form>
                             </div>
@@ -687,6 +692,7 @@
         <script src="js/slick/slick.min.js"></script>
         <script src="js/drift/Drift.min.js"></script>
         <script src="js/chosen/chosen.jquery.min.js"></script>
+        <script src="js/mcustomscrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
         <script src="js/tools.js"></script>
 
     </body>
