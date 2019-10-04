@@ -4,6 +4,10 @@ $(document).ready(function() {
         axis: 'x'
     });
 
+    $('.header-cart-content-list').mCustomScrollbar({
+        axis: 'y'
+    });
+
     $.validator.addMethod('phoneRU',
         function(phone_number, element) {
             return this.optional(element) || phone_number.match(/^\+7 \(\d{3}\) \d{3}\-\d{2}\-\d{2}$/);
@@ -16,26 +20,17 @@ $(document).ready(function() {
         var curField = curInput.parents().filter('.form-file');
         var curForm = curField.parents().filter('form');
         var curName = curInput.val().replace(/.*(\/|\\)/, '');
-        var curNameArray = curName.split('.');
-        var curExt = curNameArray[curNameArray.length - 1];
-        curNameArray.pop();
-        var curNameText = curNameArray.join('.');
-        if (curNameText.length > 10) {
-            curNameText = curNameText.substring(0, 10) + '...' + curNameText.slice(-1);
+        if (curName != '') {
+            curField.find('.form-file-input span').html(curName);
+        } else {
+            curField.find('.form-file-input span').html('Загрузка файла');
         }
-        curField.find('.form-file-name-text').html(curNameText + '.' + curExt);
-        curForm.find('.form-files').append(curForm.data('filesCode'));
     });
 
     $('form').each(function() {
         if ($(this).parents().filter('.to-window').length == 0) {
             initForm($(this));
         }
-    });
-
-    $('body').on('click', '.form-file-name-remove', function() {
-        var curField = $(this).parents().filter('.form-file');
-        curField.remove();
     });
 
     $('.menu-catalogue-link').click(function(e) {
@@ -305,6 +300,38 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('.up-link').click(function(e) {
+        $('html, body').animate({'scrollTop': 0});
+        e.preventDefault();
+    });
+
+    $('.catalogue-history .catalogue-list').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        prevArrow: '<button type="button" class="slick-prev"><svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.23185 7.5L9 13.7832L8.05645 15L-3.27835e-07 7.5L8.05645 -3.52159e-07L9 1.21676L2.23185 7.5Z" /></svg></button>',
+        nextArrow: '<button type="button" class="slick-next"><svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.76815 7.5L-7.94116e-07 1.21676L0.943547 1.05648e-06L9 7.5L0.943549 15L8.5378e-07 13.7832L6.76815 7.5Z" /></svg></button>',
+        dots: true
+    });
+
+    $('.catalogue-recommend-tab .catalogue-list').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        prevArrow: '<button type="button" class="slick-prev"><svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.23185 7.5L9 13.7832L8.05645 15L-3.27835e-07 7.5L8.05645 -3.52159e-07L9 1.21676L2.23185 7.5Z" /></svg></button>',
+        nextArrow: '<button type="button" class="slick-next"><svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.76815 7.5L-7.94116e-07 1.21676L0.943547 1.05648e-06L9 7.5L0.943549 15L8.5378e-07 13.7832L6.76815 7.5Z" /></svg></button>',
+        dots: true
+    });
+
+    $('.catalogue-popular .catalogue-list').slick({
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        prevArrow: '<button type="button" class="slick-prev"><svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.23185 7.5L9 13.7832L8.05645 15L-3.27835e-07 7.5L8.05645 -3.52159e-07L9 1.21676L2.23185 7.5Z" /></svg></button>',
+        nextArrow: '<button type="button" class="slick-next"><svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.76815 7.5L-7.94116e-07 1.21676L0.943547 1.05648e-06L9 7.5L0.943549 15L8.5378e-07 13.7832L6.76815 7.5Z" /></svg></button>',
+        dots: true
+    });
+
 });
 
 $(window).on('load resize', function() {
@@ -346,10 +373,6 @@ function initForm(curForm) {
     curForm.find('.form-select select').chosen({disable_search: true});
 
     curForm.find('input.phoneRU').mask('+7 (000) 000-00-00');
-
-    if (curForm.find('.form-files').length > 0) {
-        curForm.data('filesCode', curForm.find('.form-files').html());
-    }
 
     curForm.validate({
         ignore: '',
@@ -491,4 +514,10 @@ $(window).on('load resize scroll', function() {
             $('.catalogue-menu-inner').css({'left': 'auto', 'top': 0});
         }
     });
+
+    if (curScroll > $(window).height()) {
+        $('.up-link').addClass('visible');
+    } else {
+        $('.up-link').removeClass('visible');
+    }
 });
