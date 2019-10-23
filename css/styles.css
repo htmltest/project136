@@ -1294,7 +1294,7 @@ a.catalogue-item-size:active {background:rgba(122, 52, 166, 0.12); border-color:
     .bx-soa-section-content {margin:20px 0 0 0}
 }
 
-.bx-soa-item-table {display:table; width:100%; border-top:2px solid #ddd; border-bottom:2px solid #ddd; border-collapse:collapse}
+.bx-soa-item-table {display:table; width:100%; border-bottom:2px solid #ddd; border-collapse:collapse}
 .bx-soa-item-tr {display:table-row}
 .bx-soa-item-td {display:table-cell; vertical-align:middle; padding:20px 0; border-top:1px solid #ddd; border-bottom:1px solid #ddd}
 .bx-soa-item-td:nth-child(1) {min-width:0 !important}
@@ -1309,6 +1309,8 @@ a.catalogue-item-size:active {background:rgba(122, 52, 166, 0.12); border-color:
 .bx-soa-item-title a:hover {color:#7a34a6}
 .bx-scu-container {display:inline-block; vertical-align:middle; width:120px; padding:0 0 0 20px}
 .bx-soa-item-td-title {display:none}
+.bx-soa-item-table .bx-soa-item-tr:first-child .bx-soa-item-td {border-top:none; border-bottom-width:2px; padding:20px 0 10px}
+.bx-soa-item-table .bx-soa-item-tr:first-child .bx-soa-item-td-title {display:block; font-size:12px; line-height:14px; color:#585858}
 .bx-soa-item-td-text {font-size:16px; line-height:19px; font-weight:normal; color:#2f2f2f; letter-spacing:0}
 .bx-soa-item-td-text strong {display:block; font-weight:normal}
 .bx-soa-item-td-text .bx-price span,
