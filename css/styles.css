@@ -1306,7 +1306,7 @@ a.catalogue-item-size:active {background:rgba(122, 52, 166, 0.12); border-color:
 .bx-soa-item-img-block {display:table-cell; vertical-align:middle; width:76px}
 .bx-soa-item-img-block a {display:block}
 .bx-soa-item-imgcontainer {display:block; width:76px; height:100px; background:no-repeat center; background-size:cover}
-.bx-soa-item-content {display:table-cell; vertical-align:middle; padding:0 0 0 20px; font-size:0; line-height:0; letter-spacing:-1px}
+.bx-soa-item-content {display:table-cell; vertical-align:middle; padding:0 20px; font-size:0; line-height:0; letter-spacing:-1px}
 .bx-soa-item-title {display:inline-block; vertical-align:middle; font-size:16px; line-height:19px; font-weight:normal; color:#2f2f2f; letter-spacing:0}
 .bx-soa-item-title a {color:#2f2f2f}
 .bx-soa-item-title a:hover {color:#7a34a6}
