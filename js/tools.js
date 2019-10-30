@@ -123,7 +123,7 @@ $(document).ready(function() {
         });
     });
 
-    $('.slider').slick({
+    $('.slider:not(.slider-new), .slider-new .slider-list').slick({
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -347,7 +347,7 @@ $(document).ready(function() {
         ]
     });
 
-    $('.main-catalogue .catalogue-list .catalogue-list').slick({
+    $('.main-catalogue .catalogue-list').slick({
         infinite: false,
         slidesToShow: 4,
         slidesToScroll: 4,
@@ -472,6 +472,37 @@ $(document).ready(function() {
                 $('.bx-basket').css({'padding-bottom': $('.basket-checkout-container').height()});
             }
         }, 100);
+    });
+
+    $('.main-popular-list-container').slick({
+        infinite: false,
+        slidesToShow: 6,
+        slidesToScroll: 6,
+        prevArrow: '<button type="button" class="slick-prev"><svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.23185 7.5L9 13.7832L8.05645 15L-3.27835e-07 7.5L8.05645 -3.52159e-07L9 1.21676L2.23185 7.5Z" /></svg></button>',
+        nextArrow: '<button type="button" class="slick-next"><svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.76815 7.5L-7.94116e-07 1.21676L0.943547 1.05648e-06L9 7.5L0.943549 15L8.5378e-07 13.7832L6.76815 7.5Z" /></svg></button>',
+        dots: false,
+        adaptiveHeight: true,
+        responsive: [
+            {
+                breakpoint: 1079,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                    arrows: false,
+                    dots: true
+                }
+            },
+
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    arrows: false,
+                    dots: true
+                }
+            }
+        ]
     });
 
 });
