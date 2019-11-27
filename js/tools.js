@@ -408,13 +408,24 @@ $(document).ready(function() {
     });
 
     $('.mobile-menu-link').click(function(e) {
-        $('html').toggleClass('mobile-menu-open');
+        if ($('html').hasClass('mobile-menu-open')) {
+            $('html').removeClass('mobile-menu-open');
+            $('meta[name="viewport"]').attr('content', 'width=device-width');
+        } else {
+            var curWidth = $(window).width();
+            if (curWidth < 480) {
+                curWidth = 480;
+            }
+            $('html').addClass('mobile-menu-open');
+            $('meta[name="viewport"]').attr('content', 'width=' + curWidth);
+        }
         e.preventDefault();
     });
 
     $(document).click(function(e) {
         if ($(e.target).hasClass('menu')) {
             $('html').toggleClass('mobile-menu-open');
+            $('meta[name="viewport"]').attr('content', 'width=device-width');
         }
     });
 
