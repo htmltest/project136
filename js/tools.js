@@ -562,26 +562,6 @@ function resizeCatalogue() {
     $('.catalogue-list').each(function() {
         var curList = $(this);
 
-        curList.find('.catalogue-item-photo').css({'min-height': '0px'});
-
-        curList.find('.catalogue-item-photo').each(function() {
-            var curBlock = $(this);
-            var curHeight = curBlock.outerHeight();
-            var curTop = curBlock.offset().top;
-
-            curList.find('.catalogue-item-photo').each(function() {
-                var otherBlock = $(this);
-                if (otherBlock.offset().top == curTop) {
-                    var newHeight = otherBlock.outerHeight();
-                    if (newHeight > curHeight) {
-                        curBlock.css({'min-height': newHeight + 'px'});
-                    } else {
-                        otherBlock.css({'min-height': curHeight + 'px'});
-                    }
-                }
-            });
-        });
-
         curList.find('.catalogue-item-inner').css({'min-height': '0px'});
 
         curList.find('.catalogue-item-inner').each(function() {
