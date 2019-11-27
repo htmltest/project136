@@ -11,7 +11,7 @@ body {min-width:480px; margin:0; padding:0; font:18px Arial, sans-serif; color:#
 a {color:#7a34a6; text-decoration:none; transition:all 0.2s}
 a:hover {color:#000}
 
-img {border:none; max-width:100%; max-height:100%; height:auto}
+img {border:none; max-width:100%; height:auto}
 iframe {border:none; max-width:100%; max-height:100%}
 
 ::-ms-clear {display:none}
@@ -79,10 +79,10 @@ blockquote::before {content:""; display:block; position:absolute; left:0; top:5p
 
 .form-input {position:relative; margin:9px 0 0 0}
 .form-input input,
-.form-input textarea {vertical-align:top; box-sizing:border-box; margin:0; padding:10px 12px; outline:none; width:100%; height:46px; border:1px solid #d6d6d6; -webkit-appearance:none; color:#000; font:300 16px/24px Arial, sans-serif; border-radius:0}
+.form-input textarea {vertical-align:top; box-sizing:border-box; margin:0; padding:0 12px; outline:none; width:100%; height:46px; border:1px solid #d6d6d6; -webkit-appearance:none; color:#000; font:300 16px/46px Arial, sans-serif; border-radius:0}
 .fonts-loaded .form-input input,
 .fonts-loaded .form-input textarea {font-family:Rubik, sans-serif}
-.form-input textarea {height:auto; overflow:auto; resize:none}
+.form-input textarea {height:auto; overflow:auto; resize:none; padding:10px 12px; line-height:24px}
 .form-input input:hover,
 .form-input textarea:hover,
 .form-input input:focus,
@@ -333,7 +333,7 @@ label.error {display:block; color:#ff2f2f; font-size:13px; line-height:15px; mar
 
 .header-search {float:right; margin:19px 51px 0 0; width:388px}
 .wrapper .header-search form {margin:0; padding:0; position:relative}
-.header-search-input input {vertical-align:top; box-sizing:border-box; margin:0; padding:5px 44px 5px 11px; outline:none; width:100%; height:36px; border:1px solid #d6d6d6; -webkit-appearance:none; color:#000; font:300 16px/24px Arial, sans-serif; border-radius:0}
+.header-search-input input {vertical-align:top; box-sizing:border-box; margin:0; padding:0 44px 0 11px; outline:none; width:100%; height:36px; border:1px solid #d6d6d6; -webkit-appearance:none; color:#000; font:300 16px/36px Arial, sans-serif; border-radius:0}
 .fonts-loaded .header-search-input input {font-family:Rubik, sans-serif}
 .header-search-input label.error {display:none !important}
 .header-search-submit {position:absolute; right:0; top:0}
@@ -596,9 +596,9 @@ label.error {display:block; color:#ff2f2f; font-size:13px; line-height:15px; mar
 .catalogue-item-preview:first-child {margin:0}
 .catalogue-item-preview img {display:block; width:100%}
 .catalogue-item-content {position:relative}
-.catalogue-item-photo a {display:block; text-align:right}
+.catalogue-item-photo a {display:block; text-align:right; position:relative; overflow:hidden}
 .catalogue-item-photo img,
-.catalogue-list .slick-slide .catalogue-item-photo img {display:inline-block}
+.catalogue-list .slick-slide .catalogue-item-photo img {display:inline-block; height:340px; max-width:none}
 .catalogue-item-art {font-size:14px; line-height:17px; letter-spacing:0; color:#797979; font-weight:300; padding:18px 20px 0 20px}
 .catalogue-item-title {font-size:19px; line-height:23px; letter-spacing:0; color:#2f2f2f; font-weight:normal; padding:2px 20px 0 20px}
 .catalogue-item-title a {color:#2f2f2f}
@@ -648,6 +648,8 @@ a.catalogue-item-size:active {background:rgba(122, 52, 166, 0.12); border-color:
 @media screen and (max-width:1079px) {
     .catalogue-item {width:50%}
     .favourite .catalogue-item {width:50%}
+    .catalogue-item-photo img,
+    .catalogue-list .slick-slide .catalogue-item-photo img {height:279px}
     .catalogue-item-title {font-size:18px; line-height:21px}
     .catalogue-item-price-mobile {display:block; font-size:16px; line-height:19px; font-weight:normal; letter-spacing:0; color:#7a34a6; padding:12px 20px 5px 20px}
     .catalogue-item-price-mobile small {font-size:12px; line-height:14px}
@@ -1785,7 +1787,7 @@ a.catalogue-item-size:active {background:rgba(122, 52, 166, 0.12); border-color:
 .search-form {max-width:645px; margin:16px 0 0 0; position:relative; padding-right:87px}
 .search-form form {margin:0; padding:0}
 .search-form .form-input::after {content:""; display:block; position:absolute; right:18px; top:8px; width:18px; height:18px; background:url(../images/header-search.svg) no-repeat; pointer-events:none}
-.search-form .form-input input {height:37px; padding-right:45px; padding-top:5px; padding-bottom:6px; padding-left:16px; font-size:14px}
+.search-form .form-input input {height:37px; padding-right:45px; line-height:37px; padding-left:16px; font-size:14px}
 .search-form .form-submit {position:absolute; right:0; top:0; margin:0; width:89px}
 .search-form .form-submit .btn {height:37px; line-height:35px; font-size:14px}
 
