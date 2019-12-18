@@ -10,7 +10,7 @@ $(document).ready(function() {
 
     $.validator.addMethod('phoneRU',
         function(phone_number, element) {
-            return this.optional(element) || phone_number.match(/^\+7 \(\d{3}\) \d{3}\-\d{2}\-\d{2}$/);
+            return this.optional(element) || phone_number.match(/^\+7 \d{10}$/);
         },
         'Ошибка заполнения'
     );
@@ -116,19 +116,46 @@ $(document).ready(function() {
     });
 
     $('.product-gallery-big-item img').each(function() {
-        new Drift(this, {
-            paneContainer: $('.product-info')[0],
-            containInline: true,
-            hoverBoundingBox: true
-        });
+        if ($(window).width() > 1079) {
+            new Drift(this, {
+                paneContainer: $('.product-info')[0],
+                containInline: true,
+                hoverBoundingBox: true
+            });
+        }
     });
 
-    $('.slider:not(.slider-new), .slider-new .slider-list').slick({
+    $('.slider:not(.slider-new)').slick({
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: false,
-        dots: true
+        prevArrow: '<button type="button" class="slick-prev"><svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="49.5" y="49.5" width="49" height="49" rx="24.5" transform="rotate(-180 49.5 49.5)" stroke="#DFDFDF"/><path d="M21 34L30 25L21 16" stroke="white"/></svg></button>',
+        nextArrow: '<button type="button" class="slick-next"><svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="49.5" y="49.5" width="49" height="49" rx="24.5" transform="rotate(-180 49.5 49.5)" stroke="#DFDFDF"/><path d="M21 34L30 25L21 16" stroke="white"/></svg></button>',
+        dots: true,
+        responsive: [
+            {
+                breakpoint: 1079,
+                settings: {
+                    arrows: false
+                }
+            }
+        ]
+    });
+
+    $('.slider-new .slider-list').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        prevArrow: '<button type="button" class="slick-prev"><svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="49.5" y="49.5" width="49" height="49" rx="24.5" transform="rotate(-180 49.5 49.5)" stroke="#DFDFDF"/><path d="M21 34L30 25L21 16" stroke="white"/></svg></button>',
+        nextArrow: '<button type="button" class="slick-next"><svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="49.5" y="49.5" width="49" height="49" rx="24.5" transform="rotate(-180 49.5 49.5)" stroke="#DFDFDF"/><path d="M21 34L30 25L21 16" stroke="white"/></svg></button>',
+        responsive: [
+            {
+                breakpoint: 1079,
+                settings: {
+                    arrows: false
+                }
+            }
+        ]
     });
 
     $('.gallery').each(function() {
@@ -212,7 +239,7 @@ $(document).ready(function() {
         windowPosition();
     });
 
-    $('body').on('click', '.window-close', function(e) {
+    $('body').on('click', '.window-close, .window-close-btn', function(e) {
         windowClose();
         e.preventDefault();
     });
@@ -429,6 +456,30 @@ $(document).ready(function() {
         }
     });
 
+    $('.header-user-icon').click(function(e) {
+        if ($('.header-user-icon').hasClass('active') && $(window).width() < 1080) {
+            if ($('html').hasClass('mobile-user-menu-open')) {
+                $('html').removeClass('mobile-user-menu-open');
+                $('meta[name="viewport"]').attr('content', 'width=device-width');
+            } else {
+                var curWidth = $(window).width();
+                if (curWidth < 480) {
+                    curWidth = 480;
+                }
+                $('html').addClass('mobile-user-menu-open');
+                $('meta[name="viewport"]').attr('content', 'width=' + curWidth);
+            }
+            e.preventDefault();
+        }
+    });
+
+    $(document).click(function(e) {
+        if ($(e.target).hasClass('header-user-menu')) {
+            $('html').toggleClass('mobile-user-menu-open');
+            $('meta[name="viewport"]').attr('content', 'width=device-width');
+        }
+    });
+
     $('.menu-block').each(function() {
         if ($(this).find('.menu-block-list').length > 0) {
             $(this).find('.menu-block-title').append('<div class="menu-block-title-arrow"></div>');
@@ -516,6 +567,19 @@ $(document).ready(function() {
         ]
     });
 
+    $('.footer-content-mobile-header').click(function() {
+        $('.footer-content').toggleClass('open');
+    });
+
+    $('.footer-menu-mobile-header').click(function() {
+        $('.footer-menu-mobile').toggleClass('open');
+    });
+
+    $('.product-descr-btn a').click(function(e) {
+        $(this).parent().prev().toggleClass('open');
+        e.preventDefault();
+    });
+
 });
 
 $(window).on('load resize', function() {
@@ -556,20 +620,31 @@ $(window).on('load resize', function() {
             }
         });
     }
+
+    $('.product-descr-container').each(function() {
+        var curBlock = $(this);
+        curBlock.removeClass('open');
+        if (curBlock.height() < curBlock.find('.product-descr-content').height()) {
+            curBlock.addClass('with-btn');
+        } else {
+            curBlock.removeClass('with-btn');
+        }
+    });
+
 });
 
 function resizeCatalogue() {
     $('.catalogue-list').each(function() {
         var curList = $(this);
 
-        curList.find('.catalogue-item-inner').css({'min-height': '0px'});
+        curList.find('.catalogue-item-content').css({'min-height': '0px'});
 
-        curList.find('.catalogue-item-inner').each(function() {
+        curList.find('.catalogue-item-content').each(function() {
             var curBlock = $(this);
             var curHeight = curBlock.outerHeight();
             var curTop = curBlock.offset().top;
 
-            curList.find('.catalogue-item-inner').each(function() {
+            curList.find('.catalogue-item-content').each(function() {
                 var otherBlock = $(this);
                 if (otherBlock.offset().top == curTop) {
                     var newHeight = otherBlock.outerHeight();
@@ -592,7 +667,7 @@ $(window).on('resize', function() {
 function initForm(curForm) {
     curForm.find('.form-select select').chosen({disable_search: true});
 
-    curForm.find('input.phoneRU').mask('+7 (000) 000-00-00');
+    curForm.find('input.phoneRU').mask('+7 0000000000');
 
     curForm.validate({
         ignore: '',
