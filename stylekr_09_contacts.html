@@ -229,7 +229,7 @@
                 <script>
                     function initMap() {
 
-                        var myLatLng = {lat: 55.626573, lng: 37.637955};
+                        var myLatLng = {lat: 55.632184, lng: 37.644378};
 
                         var map = new google.maps.Map(document.getElementById('map'), {
                             zoom: 15,
@@ -237,9 +237,17 @@
                             scrollwheel: false
                         });
 
+                        var image = new google.maps.MarkerImage(
+                                        'images/map-icon.png',
+                                        new google.maps.Size(82, 85),
+                                        new google.maps.Point(0, 0),
+                                        new google.maps.Point(41, 85)
+                                    );
+
                         var marker = new google.maps.Marker({
                             position: myLatLng,
-                            map: map
+                            map: map,
+                            icon: image
                         });
                     }
                 </script>
