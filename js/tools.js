@@ -354,6 +354,10 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('.catalogue-history .catalogue-list').on('init', function(event, slick) {
+        resizeCatalogue();
+    });
+
     $('.catalogue-history .catalogue-list').slick({
         infinite: false,
         slidesToShow: 3,
@@ -372,6 +376,10 @@ $(document).ready(function() {
                 }
             }
         ]
+    });
+
+    $('.main-catalogue .catalogue-list').on('init', function(event, slick) {
+        resizeCatalogue();
     });
 
     $('.main-catalogue .catalogue-list').slick({
@@ -394,6 +402,10 @@ $(document).ready(function() {
         ]
     });
 
+    $('.catalogue-recommend-tab .catalogue-list').on('init', function(event, slick) {
+        resizeCatalogue();
+    });
+
     $('.catalogue-recommend-tab .catalogue-list').slick({
         infinite: false,
         slidesToShow: 3,
@@ -412,6 +424,10 @@ $(document).ready(function() {
                 }
             }
         ]
+    });
+
+    $('.catalogue-popular .catalogue-list').on('init', function(event, slick) {
+        resizeCatalogue();
     });
 
     $('.catalogue-popular .catalogue-list').slick({
