@@ -627,7 +627,7 @@ label.error {display:block; color:#ff2f2f; font-size:13px; line-height:15px; mar
 .catalogue-item-preview img {display:block; width:100%}
 .catalogue-item-content {position:relative; padding:0 0 83px 0}
 .catalogue-item-photo {position:relative}
-.catalogue-item-photo a {display:block; text-align:left; position:relative; overflow:hidden; text-decoration:none; color:#fff}
+.catalogue-item-photo a {display:block; text-align:right; position:relative; overflow:hidden; text-decoration:none; color:#fff}
 .catalogue-item-photo img,
 .catalogue-list .slick-slide .catalogue-item-photo img {display:inline-block; height:340px; max-width:none}
 .catalogue-item-events {position:absolute; left:10px; top:3px; pointer-events:none}

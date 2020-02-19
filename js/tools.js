@@ -10,7 +10,7 @@ $(document).ready(function() {
 
     $.validator.addMethod('phoneRU',
         function(phone_number, element) {
-            return this.optional(element) || phone_number.match(/^\+7 \d{10}$/);
+            return this.optional(element) || phone_number.match(/^\+7 \d{10,11}$/);
         },
         'Ошибка заполнения'
     );
@@ -596,6 +596,44 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $.validator.addMethod('INN',
+        function(curSeries, element) {
+            return this.optional(element) || curSeries.match(/^[0-9]{10}$/) || curSeries.match(/^[0-9]{12}$/);
+        },
+        'ИНН должен содержать 10 или 12 цифр'
+    );
+
+    var optionsINN =  {
+        translation: {
+            'X': {
+                pattern: /[0-9]/
+            },
+            'W': {
+                pattern: /[0-9]/, optional: true
+            }
+        }
+    }
+    $('input.INN').mask('XXXXXXXXXXWW', optionsINN);
+
+    $.validator.addMethod('OGRN',
+        function(curSeries, element) {
+            return this.optional(element) || curSeries.match(/^[0-9]{13}$/) || curSeries.match(/^[0-9]{15}$/);
+        },
+        'Поле должно содержать 13 или 15 цифр'
+    );
+
+    var optionsOGRN =  {
+        translation: {
+            'X': {
+                pattern: /[0-9]/
+            },
+            'W': {
+                pattern: /[0-9]/, optional: true
+            }
+        }
+    }
+    $('input.OGRN').mask('XXXXXXXXXXXXXWW', optionsOGRN);
+
 });
 
 $(window).on('load resize', function() {
@@ -683,7 +721,22 @@ $(window).on('resize', function() {
 function initForm(curForm) {
     curForm.find('.form-select select').chosen({disable_search: true});
 
-    curForm.find('input.phoneRU').mask('+7 0000000000');
+    var optionsPhoneRU =  {
+        translation: {
+            'X': {
+                pattern: /[0-9]/
+            },
+            'W': {
+                pattern: /[0-9]/, optional: true
+            }
+        }
+    }
+    curForm.find('input.phoneRU').mask('+7 XXXXXXXXXXW', optionsPhoneRU);
+    curForm.find('input.phoneRU').on('focus', function() {
+        if ($(this).val() == '') {
+            $(this).val('+7 ');
+        }
+    });
 
     curForm.validate({
         ignore: '',
