@@ -534,8 +534,19 @@ label.error {display:block; color:#ff2f2f; font-size:13px; line-height:15px; mar
 .catalogue-container {float:right; width:805px}
 .catalogue-container h1 {margin:0}
 
+.catalogue-container-header h1 {float:left}
+.catalogue-container-header::after {content:""; display:block; clear:both}
+.catalogue-container-header .doc-link {float:left; margin:2px 0 0 20px}
+.catalogue-container-header .doc-link a {border-color:#7a34a6; background:#7a34a6; color:#fff}
+.catalogue-container-header .doc-link a:hover {background:rgba(122, 52, 166, 0.12); color:#000}
+.catalogue-container-header .doc-link a:active {background:rgba(122, 52, 166, 0.12); color:#000}
+.catalogue-container-header .doc-link-icon {background:#fff; color:#7a34a6}
+.catalogue-container-header .doc-link a:hover .doc-link-icon {background:#7a34a6; color:#fff}
+
 @media screen and (max-width:1079px) {
     .catalogue-container {float:none; width:auto}
+    .catalogue-container-header h1 {float:none}
+    .catalogue-container-header .doc-link {float:none; margin:20px 0}
 }
 
 .favourite .catalogue-container {float:none; width:auto}
