@@ -1,0 +1,49 @@
+<div class="window-returns">
+    <div class="window-title">Данные для возврата денежных средств</div>
+    <form action="windows/reg-success.html" method="post" class="ajax-form">
+
+        <div class="form-label">Номер заказа (цифры) <span>*</span></div>
+        <div class="form-input"><input type="text" name="order" value="" class="required" /></div>
+
+        <div class="form-label">Заказ был доставлен:</div>
+        <div class="form-radio"><label><input type="radio" name="delivery" value="1" /><span>Почтой</span></label></div>
+        <div class="form-radio"><label><input type="radio" name="delivery" value="2" checked="checked" /><span>Курьером</span></label></div>
+        <div class="form-radio"><label><input type="radio" name="delivery" value="3" /><span>Через пункт самовывоза</span></label></div>
+
+        <div class="form-label">Номер заказа (цифры) <span>*</span></div>
+        <div class="form-input"><input type="text" name="order_delivery" value="" class="required" /></div>
+        
+        <div class="returns-bank-title">Банковские реквизиты для перечисления денег по возврату</div>
+
+        <div class="form-label">Банк получателя <span>*</span></div>
+        <div class="form-input"><input type="text" name="bank" value="" class="required" /></div>
+
+        <div class="form-label">ИНН банка получателя <span>*</span></div>
+        <div class="form-input"><input type="text" name="bankINN" value="" class="required INN" /></div>
+
+        <div class="form-label">Корреспондентский счет <span>*</span></div>
+        <div class="form-input"><input type="text" name="correspondent" value="" class="required" /></div>
+
+        <div class="form-label">Счет получателя <span>*</span></div>
+        <div class="form-input"><input type="text" name="account" value="" class="required" /></div>
+
+        <div class="form-label">Лицевой счет/номер карты (при необходимости)</div>
+        <div class="form-input"><input type="text" name="card" value="" /></div>
+
+        <div class="form-label">БИК получателя <span>*</span></div>
+        <div class="form-input"><input type="text" name="bic" value="" class="required" /></div>
+
+        <div class="form-label">Фамилия владельца счета <span>*</span></div>
+        <div class="form-input"><input type="text" name="lastname" value="" class="required" /></div>
+
+        <div class="form-label">Имя владельца счета <span>*</span></div>
+        <div class="form-input"><input type="text" name="firstname" value="" class="required" /></div>
+
+        <div class="form-label">Отчество владельца счета <span>*</span></div>
+        <div class="form-input"><input type="text" name="middlename" value="" /></div>
+
+        <div class="form-checkbox"><label><input type="checkbox" name="policy" class="required" /><span>Cогласия с обработкой персональных данных</span></label></div>
+
+        <div class="form-submit"><input type="submit" value="Отправить" class="btn" /></div>
+    </form>
+</div>
