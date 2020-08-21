@@ -163,7 +163,7 @@
                             <li><a href="#">История марки</a></li>
                             <li><a href="#">Фото производства</a></li>
                             <li class="sale"><a href="#">SALE%</a></li>
-                            <li><a href="#">Оплата и доставка</a></li>
+                            <li><a href="#">Доставка и оплата</a></li>
                             <li><a href="#">Возврат товара</a></li>
                             <li><a href="#">Оптовикам</a></li>
                             <li><a href="#">Контакты</a></li>
@@ -222,9 +222,21 @@
                     </div>
 
                     <div class="auth-tabs-item">
-                        <form action="#" method="post">
+                        <form action="#" method="post" data-phone="ajax/auth-phone.json" class="auth-form-phone">
                             <div class="form-label">Телефон<span>*</span></div>
-                            <div class="form-input"><input type="text" name="phone" value="" class="required phoneRU" /></div>
+                            <div class="form-input"><input type="text" name="phone" value="" class="required phoneRU auth-form-phone-input" /></div>
+
+                            <div class="auth-form-sms">
+                                <div class="form-label">СМС код<span>*</span></div>
+                                <div class="form-input"><input type="text" name="sms" value="" class="auth-form-sms-input" /></div>
+
+                                <div class="form-checkbox"><label><input type="checkbox" name="remember" checked="checked" /><span>Запомнить меня на этом компьютере</span></label></div>
+
+                                <div class="auth-ctrl">
+                                    <div class="form-submit"><input type="submit" value="Войти" class="btn" /></div>
+                                    <div class="auth-ctrl-forgot"><a href="#">Забыли пароль?</a></div>
+                                </div>
+                            </div>
 
                             <div class="auth-ctrl">
                                 <div class="form-submit form-submit-code"><input type="submit" value="Получить код" class="btn" /></div>
@@ -268,7 +280,7 @@
                             <li><a href="#">История марки</a></li>
                             <li><a href="#">Фото производства</a></li>
                             <li class="sale"><a href="#">SALE</a></li>
-                            <li><a href="#">Оплата и доставка</a></li>
+                            <li><a href="#">Доставка и оплата</a></li>
                             <li><a href="#">Возврат товара</a></li>
                             <li><a href="#">Оптовикам</a></li>
                             <li><a href="#">Контакты</a></li>
@@ -372,7 +384,7 @@
                             <li><a href="#">История марки</a></li>
                             <li><a href="#">Фото производства</a></li>
                             <li class="sale"><a href="#">SALE</a></li>
-                            <li><a href="#">Оплата и доставка</a></li>
+                            <li><a href="#">Доставка и оплата</a></li>
                             <li><a href="#">Возврат товара</a></li>
                             <li><a href="#">Оптовикам</a></li>
                             <li><a href="#">Контакты</a></li>

@@ -535,22 +535,31 @@
                                     <div class="bx-soa-section-content container-fluid">
                                         <div class="bx_soa_location row">
                                             <div class="col-xs-12">
-                                                <div data-property-id-row="11" class="form-group bx-soa-location-input-container">
+                                                <div data-property-id-row="11" class="form-group bx-soa-location-input-container has-error">
                                                     <label class="bx-soa-custom-label" for="soa-property-11"><span class="bx-authform-starrequired">*</span> Местоположение</label>
-                                                    <div id="sls-43047" class="bx-sls ">
+                                                    <div id="tooltip-soa-property-11" class="bx-soa-tooltip bx-soa-tooltip-static bx-soa-tooltip-danger tooltip top" data-state="opened" style="opacity: 1; display: block;">
+                                                        <div class="tooltip-arrow"></div>
+                                                        <div class="tooltip-inner">Поле обязательно для заполнения</div>
+                                                    </div>
+                                                    <div id="sls-97850" class="bx-sls ">
                                                         <div class="dropdown-block bx-ui-sls-input-block form-control">
                                                             <span class="dropdown-icon"></span>
-                                                            <input type="text" autocomplete="off" name="ORDER_PROP_11" value="" class="dropdown-field" placeholder="Введите название ..." style="display: none;">
+                                                            <input type="text" autocomplete="off" name="ORDER_PROP_11" value="0000103664" class="dropdown-field" placeholder="Введите название ..." style="display: none;">
                                                             <div class="bx-ui-sls-container" style="margin: 0px; padding: 0px; border: none; position: relative;">
                                                                 <input type="text" disabled="disabled" autocomplete="off" class="bx-ui-sls-route" style="padding: 0px; margin: 0px;">
-                                                                <input type="text" autocomplete="off" value="" class="bx-ui-sls-fake" placeholder="Введите название ...">
+                                                                <input type="text" autocomplete="off" value="Сан" class="bx-ui-sls-fake" placeholder="Введите название ..." title="">
                                                             </div>
                                                             <div class="dropdown-fade2white"></div>
                                                             <div class="bx-ui-sls-loader"></div>
                                                             <div class="bx-ui-sls-clear" title="Отменить выбор" style="display: none;"></div>
-                                                            <div class="bx-ui-sls-pane" style="overflow: hidden auto;"><div class="bx-ui-sls-variants"></div></div>
+                                                            <div class="bx-ui-sls-pane" style="overflow: hidden auto; display: block; top: 35px; bottom: auto;">
+                                                                <div class="bx-ui-sls-variants">
+                                                                    <div class="dropdown-item bx-ui-sls-variant"><span class="dropdown-item-text"><span>Сан</span>кт-Петербург, Северо-Запад, Россия</span></div>
+                                                                    <div class="dropdown-item bx-ui-sls-variant"><span class="dropdown-item-text"><span>Сан</span>довский район, Тверская область, Центр, Россия</span></div>
+                                                                    <div class="dropdown-item bx-ui-sls-variant"><span class="dropdown-item-text"><span>Сан</span>чурский район, Кировская область, Поволжье, Россия</span></div>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div class="bx-ui-sls-error-message"></div>
                                                     </div>
                                                 </div>
                                                 <div class="form-group bx-soa-location-input-container" data-property-id-row="9">
@@ -560,35 +569,189 @@
                                                 <div class="bx-soa-reference">Выберите свой город в списке. Если вы не нашли свой город, выберите "другое местоположение", а город впишите в поле "Город"</div>
                                             </div>
                                         </div>
-
                                         <div class="row bx-soa-more">
-                                            <div class="bx-soa-more-btn col-xs-12"><a href="javascript:void(0)" class="pull-left btn btn-default btn-md">Назад</a><a href="javascript:void(0)" class="pull-right btn btn-default btn-md">Далее</a></div>
+                                            <div class="bx-soa-more-btn col-xs-12">
+                                                <a href="javascript:void(0)" class="pull-left btn btn-default btn-md">Назад</a>
+                                                <a href="javascript:void(0)" class="pull-right btn btn-default btn-md">Далее</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <!-- DELIVERY BLOCK -->
-                                <div id="bx-soa-delivery" data-visited="false" class="bx-soa-section bx-active">
+                                <div id="bx-soa-delivery" data-visited="true" class="bx-soa-section bx-active bx-selected">
                                     <div class="bx-soa-section-title-container">
                                         <h2 class="bx-soa-section-title col-sm-9"><span class="bx-soa-section-title-count"></span>Доставка</h2>
-                                        <div class="col-xs-12 col-sm-3 text-right"><a href="" class="bx-soa-editstep" style="display: none;">Изменить</a></div>
+                                        <div class="col-xs-12 col-sm-3 text-right"><a href="" class="bx-soa-editstep" style="">изменить</a></div>
+                                    </div>
+
+                                    <div class="bx-soa-section-content container-fluid">
+                                        <div class="bx-soa-pp row">
+                                            <div class="col-sm-7 bx-soa-pp-item-container">
+                                                <div class="bx-soa-pp-company col-lg-4 col-sm-4 col-xs-6 bx-selected">
+                                                    <div class="bx-soa-pp-company-graf-container">
+                                                        <input id="ID_DELIVERY_ID_2" name="DELIVERY_ID" type="checkbox" class="bx-soa-pp-company-checkbox" value="2">
+                                                        <div class="bx-soa-pp-company-image" style="background-image: url(images/order-delivery-1.png);background-image: -webkit-image-set(url(images/order-delivery-1.png) 1x, url(images/order-delivery-1-2x.png) 2x)"></div>
+                                                        <div class="bx-soa-pp-delivery-cost">0 руб.</div>
+                                                    </div>
+                                                    <div class="bx-soa-pp-company-smalltitle">Самовывоз из пункта выдачи</div>
+                                                </div>
+                                                <div class="bx-soa-pp-company col-lg-4 col-sm-4 col-xs-6">
+                                                    <div class="bx-soa-pp-company-graf-container">
+                                                        <input id="ID_DELIVERY_ID_3" name="DELIVERY_ID" type="checkbox" class="bx-soa-pp-company-checkbox" value="3">
+                                                        <div class="bx-soa-pp-company-image" style="background-image: url(images/order-delivery-3.png);background-image: -webkit-image-set(url(images/order-delivery-3.png) 1x, url(images/order-delivery-3-2x.png) 2x)"></div>
+                                                        <div class="bx-soa-pp-delivery-cost">0 руб.</div>
+                                                    </div>
+                                                    <div class="bx-soa-pp-company-smalltitle">Курьерская доставка СДЭК</div>
+                                                </div>
+                                                <div class="bx-soa-pp-company col-lg-4 col-sm-4 col-xs-6">
+                                                    <div class="bx-soa-pp-company-graf-container">
+                                                        <input id="ID_DELIVERY_ID_3" name="DELIVERY_ID" type="checkbox" class="bx-soa-pp-company-checkbox" value="3">
+                                                        <div class="bx-soa-pp-company-image" style="background-image: url(images/order-delivery-4.png);background-image: -webkit-image-set(url(images/order-delivery-4.png) 1x, url(images/order-delivery-4-2x.png) 2x)"></div>
+                                                        <div class="bx-soa-pp-delivery-cost">0 руб.</div>
+                                                    </div>
+                                                    <div class="bx-soa-pp-company-smalltitle">Почта России</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-5 bx-soa-pp-desc-container">
+                                                <div class="bx-soa-pp-company">
+                                                    <div class="bx-soa-pp-company-subTitle">Доставка курьером</div>
+                                                    <div class="bx-soa-pp-company-logo">
+                                                        <div class="bx-soa-pp-company-graf-container">
+                                                            <div class="bx-soa-pp-company-image" style="background-image: url(/upload/resize_cache/sale/delivery/logotip/ad1/300_300_1/ad1d8a237c60de0c6b650fc80487118f.png);background-image: -webkit-image-set(url(/upload/resize_cache/sale/delivery/logotip/ad1/300_300_1/ad1d8a237c60de0c6b650fc80487118f.png) 1x, url(/upload/sale/delivery/logotip/ad1/ad1d8a237c60de0c6b650fc80487118f.png) 2x)"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="bx-soa-pp-company-block">
+                                                        <div class="bx-soa-pp-company-desc">Доставка осуществляется в течение дня в удобное для вас время.</div>
+                                                    </div>
+                                                    <div style="clear: both;"></div>
+                                                    <ul class="bx-soa-pp-list">
+                                                        <li>
+                                                            <div class="bx-soa-pp-list-termin">Стоимость:</div>
+                                                            <div class="bx-soa-pp-list-description">500 руб.</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="bx-soa-coupon">
+                                            <div class="bx-soa-coupon-label"><label>Применить купон:</label></div>
+                                            <div class="bx-soa-coupon-block">
+                                                <div class="bx-soa-coupon-input"><input class="form-control bx-ios-fix" type="text"></div>
+                                                <span class="bx-soa-coupon-item"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row bx-soa-more">
+                                            <div class="bx-soa-more-btn col-xs-12">
+                                                <a href="javascript:void(0)" class="pull-left btn btn-default btn-md">Назад</a>
+                                                <a href="javascript:void(0)" class="pull-right btn btn-default btn-md">Далее</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
                                 <!-- PAY SYSTEMS BLOCK -->
-                                <div id="bx-soa-paysystem" data-visited="false" class="bx-soa-section bx-active">
+                                <div id="bx-soa-paysystem" data-visited="true" class="bx-soa-section bx-active bx-selected" style="">
                                     <div class="bx-soa-section-title-container">
                                         <h2 class="bx-soa-section-title col-sm-9"><span class="bx-soa-section-title-count"></span>Оплата</h2>
-                                        <div class="col-xs-12 col-sm-3 text-right"><a href="" class="bx-soa-editstep" style="display: none;">Изменить</a></div>
+                                        <div class="col-xs-12 col-sm-3 text-right"><a href="" class="bx-soa-editstep" style="">изменить</a></div>
+                                    </div>
+
+                                    <div class="bx-soa-section-content container-fluid">
+                                        <div class="bx-soa-pp row">
+                                            <div class="col-sm-7 bx-soa-pp-item-container">
+                                                <div class="bx-soa-pp-company col-lg-4 col-sm-4 col-xs-6 bx-selected">
+                                                    <div class="bx-soa-pp-company-graf-container">
+                                                        <input id="ID_PAY_SYSTEM_ID_1" name="PAY_SYSTEM_ID" type="checkbox" class="bx-soa-pp-company-checkbox" value="1">
+                                                        <div class="bx-soa-pp-company-image" style="background-image: url(images/order-payment-1.png);background-image: -webkit-image-set(url(images/order-payment-1.png) 1x, url(images/order-payment-1-2x.png) 2x)"></div>
+                                                    </div>
+                                                    <div class="bx-soa-pp-company-smalltitle">Предварительная оплата</div>
+                                                </div>
+                                                <div class="bx-soa-pp-company col-lg-4 col-sm-4 col-xs-6">
+                                                    <div class="bx-soa-pp-company-graf-container">
+                                                        <input id="ID_PAY_SYSTEM_ID_1" name="PAY_SYSTEM_ID" type="checkbox" class="bx-soa-pp-company-checkbox" value="1">
+                                                        <div class="bx-soa-pp-company-image" style="background-image: url(images/order-payment-2.png);background-image: -webkit-image-set(url(images/order-payment-2.png) 1x, url(images/order-payment-2-2x.png) 2x)"></div>
+                                                    </div>
+                                                    <div class="bx-soa-pp-company-smalltitle">Оплата при получении</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-5 bx-soa-pp-desc-container">
+                                                <div class="bx-soa-pp-company">
+                                                    <div>
+                                                        <div class="bx-soa-pp-company-subTitle">Банковский перевод</div>
+                                                        <div class="bx-soa-pp-company-logo">
+                                                            <div class="bx-soa-pp-company-graf-container">
+                                                                <div class="bx-soa-pp-company-image" style="background-image: url(images/order-payment-1.png);background-image: -webkit-image-set(images/order-payment-1.png) 1x, url(images/order-payment-1-2x.png) 2x)"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="bx-soa-pp-company-block">
+                                                            <div class="bx-soa-pp-company-desc"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row bx-soa-more">
+                                            <div class="bx-soa-more-btn col-xs-12">
+                                                <a href="javascript:void(0)" class="pull-left btn btn-default btn-md">Назад</a>
+                                                <a href="javascript:void(0)" class="pull-right btn btn-default btn-md">Далее</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
                                 <!-- BUYER PROPS BLOCK -->
-                                <div id="bx-soa-properties" data-visited="false" class="bx-soa-section bx-active">
+                                <div id="bx-soa-properties" data-visited="true" class="bx-soa-section bx-active bx-selected" style="">
                                     <div class="bx-soa-section-title-container">
                                         <h2 class="bx-soa-section-title col-sm-9"><span class="bx-soa-section-title-count"></span>Покупатель</h2>
-                                        <div class="col-xs-12 col-sm-3 text-right"><a href="" class="bx-soa-editstep" style="display: none;">Изменить</a></div>
+                                        <div class="col-xs-12 col-sm-3 text-right"><a href="" class="bx-soa-editstep" style="">изменить</a></div>
                                     </div>
+
+                                    <div class="bx-soa-section-content container-fluid">
+                                        <div class="row">
+                                            <div class="col-sm-12 bx-soa-customer">
+                                                <div class="form-group bx-soa-customer-field" data-property-id-row="1">
+                                                    <label for="soa-property-1" class="bx-soa-custom-label">Имя</label>
+                                                    <div class="soa-property-container"><input type="text" size="40" name="ORDER_PROP_1" id="soa-property-1" autocomplete="name" placeholder="" class="form-control bx-soa-customer-input bx-ios-fix"></div>
+                                                </div>
+                                                <div class="form-group bx-soa-customer-field" data-property-id-row="3">
+                                                    <label for="soa-property-3" class="bx-soa-custom-label">Телефон</label>
+                                                    <div class="soa-property-container"><input type="text" size="30" name="ORDER_PROP_3" id="soa-property-3" autocomplete="tel" placeholder="" class="form-control bx-soa-customer-input bx-ios-fix"></div>
+                                                </div>
+                                                <div class="form-group bx-soa-customer-field" data-property-id-row="2">
+                                                    <label for="soa-property-2" class="bx-soa-custom-label">Электронная почта</label>
+                                                    <div class="soa-property-container"><input type="text" size="40" name="ORDER_PROP_2" id="soa-property-2" autocomplete="email" placeholder="" class="form-control bx-soa-customer-input bx-ios-fix"></div>
+                                                </div>
+                                                <div class="form-group bx-soa-customer-field" data-property-id-row="7">
+                                                    <label for="soa-property-7" class="bx-soa-custom-label">Адрес доставки</label>
+                                                    <div class="soa-property-container"><input type="text" size="40" name="ORDER_PROP_7" id="soa-property-7" autocomplete="address" placeholder="" class="form-control bx-soa-customer-input bx-ios-fix"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group bx-soa-customer-field">
+                                                    <label for="orderDescription" class="bx-soa-customer-label">Комментарий</label>
+                                                    <textarea id="orderDescription" cols="4" class="form-control bx-soa-customer-textarea bx-ios-fix" name="ORDER_DESCRIPTION"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row bx-soa-more">
+                                            <div class="bx-soa-more-btn col-xs-12">
+                                                <a href="javascript:void(0)" class="pull-left btn btn-default btn-md">Назад</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- ORDER SAVE BLOCK -->
+                                <div id="bx-soa-orderSave">
+                                    <div class="checkbox">
+                                        <label class="main-user-consent-request">
+                                            <input type="checkbox" value="Y" checked="" name="">
+                                            <span class="main-user-consent-request-announce">Cогласия с обработкой персональных данных</span>
+                                        </label>
+                                    </div>
+                                    <a href="javascript:void(0)" style="margin: 10px 0" class="pull-right btn btn-default btn-lg hidden-xs" data-save-button="true">Оформить заказ</a>
                                 </div>
 
                             </div>

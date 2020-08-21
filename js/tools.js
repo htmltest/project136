@@ -190,13 +190,13 @@ $(document).ready(function() {
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
-        prevArrow: '<button type="button" class="slick-prev"><svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="49.5" y="49.5" width="49" height="49" rx="24.5" transform="rotate(-180 49.5 49.5)" stroke="#DFDFDF"/><path d="M21 34L30 25L21 16" stroke="white"/></svg></button>',
-        nextArrow: '<button type="button" class="slick-next"><svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="49.5" y="49.5" width="49" height="49" rx="24.5" transform="rotate(-180 49.5 49.5)" stroke="#DFDFDF"/><path d="M21 34L30 25L21 16" stroke="white"/></svg></button>',
+        arrows: false,
+        dots: true,
         responsive: [
             {
                 breakpoint: 1079,
                 settings: {
-                    arrows: false
+                    dots: false
                 }
             }
         ]
@@ -828,6 +828,42 @@ $(document).ready(function() {
             curAuth.find('.auth-tabs-item').eq(curIndex).addClass('active');
         }
         e.preventDefault();
+    });
+    
+    $('.auth-form-phone').each(function() {
+        var curForm = $(this);
+        var validator = curForm.validate();
+        validator.destroy();
+        curForm.validate({
+            ignore: '',
+            submitHandler: function(form) {
+                curForm.addClass('loading');
+                curForm.find('.form-error').remove();
+                if (!curForm.hasClass('sms')) {
+                    $.ajax({
+                        type: 'POST',
+                        url: curForm.attr('data-phone'),
+                        dataType: 'json',
+                        data: curForm.serialize(),
+                        cache: false,
+                        timeout: 30000
+                    }).fail(function(jqXHR, textStatus, errorThrown) {
+                        curForm.removeClass('loading');
+                        curForm.prepend('<div class="form-error"><div class="form-error-title">Произошла ошибка</div><div class="form-error-text">Сервис временно недоступен, попробуйте позже.</div></div>');
+                    }).done(function(data) {
+                        curForm.removeClass('loading');
+                        if (data.status == 'ok') {
+                            $('.auth-form-phone').addClass('sms');
+                            $('.auth-form-sms-input').attr('required', 'required').trigger('focus');
+                        } else {
+                            $(form).prepend('<div class="form-error"><div class="form-error-title">Произошла ошибка</div><div class="form-error-text">' + data.errorMessage + '</div></div>');
+                        }
+                    });
+                } else {
+                    form.submit();
+                }
+            }
+        });
     });
 
 });

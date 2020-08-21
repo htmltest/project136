@@ -181,13 +181,13 @@
                                                 <div class="menu-block-title"><a href="#">Весна-Лето 2019</a></div>
                                             </div>
 
-                                            <div class="menu-block">
+                                            <div class="menu-block active">
                                                 <div class="menu-block-title"><a href="#">Блузки, топы</a></div>
                                                 <div class="menu-block-list">
                                                     <ul>
                                                         <li><a href="#">Блузки</a></li>
                                                         <li><a href="#">Топы</a></li>
-                                                        <li><a href="#">Футболки</a></li>
+                                                        <li class="active"><a href="#">Футболки</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -292,340 +292,329 @@
             <!-- container -->
             <div class="container">
 
-                <div class="breadcrumbs"><a href="#">Каталог</a><span>–</span>Оформление заказа</div>
-                <div class="back-mobile"><a href="#">Каталог</a></div>
+                <div class="breadcrumbs"><a href="#">Стиль КР</a><span>–</span>Личный кабинет</div>
+                <div class="back-mobile"><a href="#">Стиль КР</a></div>
 
-                <h1>Оформление заказа</h1>
+                <!-- catalogue -->
+                <div class="catalogue">
 
-                <!-- order -->
-                <div class="bx-content col-xs-12">
-                    <form action="#" method="post" id="bx-soa-order-form" enctype="multipart/form-data">
-
-                        <div id="bx-soa-order" class="row bx-green">
-
-                            <!-- MAIN BLOCK -->
-                            <div class="col-sm-9 bx-soa">
-
-                                <div id="bx-soa-main-notifications">
-                                    <div class="alert alert-danger" style="display:none"></div>
-                                    <div data-type="informer" style="" class="alert alert-warning">
-                                        <div class="row">
-                                            <div class="col-xs-12" style="position: relative; padding-left: 48px;">
-                                                <div class="icon-warning"></div>
-                                                <div>Вы заказывали в нашем интернет-магазине, поэтому мы заполнили все данные автоматически.<br> Обратите внимание на развернутый блок с информацией о заказе. Здесь вы можете внести необходимые изменения или оставить как есть и нажать кнопку "Оформить заказ".</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- DUPLICATE MOBILE ORDER SAVE BLOCK -->
-                                <div id="bx-soa-total-mobile" style="margin-bottom: 6px;" class="visible-xs">
-                                    <div class="bx-soa-cart-total">
-                                        <div class="bx-soa-cart-total-line">
-                                            <span class="bx-soa-cart-t">Стоимость товаров</span>
-                                            <span class="bx-soa-cart-d">14&nbsp;600 <span>₽</span><br>
-                                                <span class="bx-price-old">37&nbsp;970 <span>₽</span></span>
-                                            </span>
-                                        </div>
-                                        <div class="bx-soa-cart-total-line">
-                                            <span class="bx-soa-cart-t">Доставка</span>
-                                            <span class="bx-soa-cart-d">500 <span>₽</span></span>
-                                        </div>
-                                        <div class="bx-soa-cart-total-line bx-soa-cart-total-line-highlighted">
-                                            <span class="bx-soa-cart-t">Скидка</span>
-                                            <span class="bx-soa-cart-d">4&nbsp;200 <span>₽</span></span>
-                                        </div>
-                                        <div class="bx-soa-cart-total-line bx-soa-cart-total-line-total">
-                                            <span class="bx-soa-cart-t">Итого</span>
-                                            <span class="bx-soa-cart-d">10&nbsp;200 <span>₽</span></span>
-                                        </div>
-                                        <div class="bx-soa-cart-total-button-container visible-xs" style="display: none !important">
-                                            <a href="javascript:void(0)" class="btn btn-default btn-lg btn-order-save">Оформить заказ</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- BASKET ITEMS BLOCK -->
-                                <div id="bx-soa-basket" data-visited="true" class="bx-soa-section bx-active bx-step-completed" style="">
-                                    <div class="bx-soa-section-title-container">
-                                        <h2 class="bx-soa-section-title col-sm-9"><span class="bx-soa-section-title-count"></span>Товары в заказе</h2>
-                                        <div class="col-xs-12 col-sm-3 text-right"><a href="javascript:void(0)" class="bx-soa-editstep">Изменить</a></div>
-                                    </div>
-
-                                    <div class="bx-soa-section-content container-fluid">
-                                        <div class="bx-soa-table-fade">
-                                            <div style="overflow: auto hidden;">
-                                                <div class="bx-soa-item-table">
-                                                    <div class="bx-soa-item-tr hidden-sm hidden-xs">
-                                                        <div class="bx-soa-item-td" style="padding-bottom: 5px;">
-                                                            <div class="bx-soa-item-td-title">Название товара</div>
-                                                        </div>
-                                                        <div class="bx-soa-item-td bx-soa-item-properties" style="padding-bottom: 5px;">
-                                                            <div class="bx-soa-item-td-title">Размер</div>
-                                                        </div>
-                                                        <div class="bx-soa-item-td bx-soa-item-properties bx-text-right" style="padding-bottom: 5px;">
-                                                            <div class="bx-soa-item-td-title">Цена, 1 шт.</div>
-                                                        </div>
-                                                        <div class="bx-soa-item-td bx-soa-item-properties bx-text-right" style="padding-bottom: 5px;">
-                                                            <div class="bx-soa-item-td-title">Кол-во</div>
-                                                        </div>
-                                                        <div class="bx-soa-item-td bx-soa-item-properties bx-text-right" style="padding-bottom: 5px;">
-                                                            <div class="bx-soa-item-td-title">Сумма за товар</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="bx-soa-item-tr bx-soa-basket-info bx-soa-item-tr-first">
-                                                        <div class="bx-soa-item-td" style="min-width: 300px;">
-                                                            <div class="bx-soa-item-block">
-                                                                <div class="bx-soa-item-img-block">
-                                                                    <a href="#">
-                                                                        <div class="bx-soa-item-imgcontainer" style="background-image: url(files/order-1.jpg)"></div>
-                                                                    </a>
-                                                                </div>
-                                                                <div class="bx-soa-item-content">
-                                                                    <div class="bx-soa-item-title">
-                                                                        <a href="#">Платье зимнее теплое длинное</a>
-                                                                        <span>4267</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="bx-soa-item-td bx-soa-item-properties">
-                                                            <div class="bx-soa-item-td-title visible-xs visible-sm">Размер</div>
-                                                            <div class="bx-soa-item-td-text"><span>50</span><br></div>
-                                                        </div>
-                                                        <div class="bx-soa-item-td bx-soa-item-properties bx-text-right">
-                                                            <div class="bx-soa-item-td-title visible-xs visible-sm">Цена, 1 шт.</div>
-                                                            <div class="bx-soa-item-td-text"><strong class="bx-price">3&nbsp;700 <span>₽</span></strong></div>
-                                                        </div>
-                                                        <div class="bx-soa-item-td bx-soa-item-properties bx-text-right">
-                                                            <div class="bx-soa-item-td-title visible-xs visible-sm">Количество</div>
-                                                            <div class="bx-soa-item-td-text"><span>2 шт</span></div>
-                                                        </div>
-                                                        <div class="bx-soa-item-td bx-soa-item-properties bx-text-right">
-                                                            <div class="bx-soa-item-td-title visible-xs visible-sm">Сумма за товар</div>
-                                                            <div class="bx-soa-item-td-text"><strong class="bx-price all">2&nbsp;400 <span>₽</span></strong><br><strong class="bx-price-old">6&nbsp;400 <span>₽</span></strong></div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="bx-soa-item-tr bx-soa-basket-info bx-soa-item-tr-first">
-                                                        <div class="bx-soa-item-td" style="min-width: 300px;">
-                                                            <div class="bx-soa-item-block">
-                                                                <div class="bx-soa-item-img-block">
-                                                                    <a href="#">
-                                                                        <div class="bx-soa-item-imgcontainer" style="background-image: url(files/order-2.jpg); background-image:-webkit-image-set(files/order-2.jpg) 1x, url(files/order-2.jpg) 2x)"></div>
-                                                                    </a>
-                                                                </div>
-                                                                <div class="bx-soa-item-content">
-                                                                    <div class="bx-soa-item-title">
-                                                                        <a href="#">Платье зимнее теплое длинное</a>
-                                                                        <span>1558_2</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="bx-soa-item-td bx-soa-item-properties">
-                                                            <div class="bx-soa-item-td-title visible-xs visible-sm">Размер</div>
-                                                            <div class="bx-soa-item-td-text"><span>50</span><br></div>
-                                                        </div>
-                                                        <div class="bx-soa-item-td bx-soa-item-properties bx-text-right">
-                                                            <div class="bx-soa-item-td-title visible-xs visible-sm">Цена, 1 шт.</div>
-                                                            <div class="bx-soa-item-td-text"><strong class="bx-price">3&nbsp;700 <span>₽</span></strong></div>
-                                                        </div>
-                                                        <div class="bx-soa-item-td bx-soa-item-properties bx-text-right">
-                                                            <div class="bx-soa-item-td-title visible-xs visible-sm">Количество</div>
-                                                            <div class="bx-soa-item-td-text"><span>2 шт</span></div>
-                                                        </div>
-                                                        <div class="bx-soa-item-td bx-soa-item-properties bx-text-right">
-                                                            <div class="bx-soa-item-td-title visible-xs visible-sm">Сумма за товар</div>
-                                                            <div class="bx-soa-item-td-text"><strong class="bx-price all">2&nbsp;400 <span>₽</span></strong><br><strong class="bx-price-old">6&nbsp;400 <span>₽</span></strong></div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="bx-soa-item-tr bx-soa-basket-info bx-soa-item-tr-first">
-                                                        <div class="bx-soa-item-td" style="min-width: 300px;">
-                                                            <div class="bx-soa-item-block">
-                                                                <div class="bx-soa-item-img-block">
-                                                                    <a href="#">
-                                                                        <div class="bx-soa-item-imgcontainer" style="background-image: url(files/order-3.jpg); background-image:-webkit-image-set(files/order-3.jpg) 1x, url(files/order-3.jpg) 2x)"></div>
-                                                                    </a>
-                                                                </div>
-                                                                <div class="bx-soa-item-content">
-                                                                    <div class="bx-soa-item-title">
-                                                                        <a href="#">Платье зимнее теплое длинное</a>
-                                                                        <span>4267</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="bx-soa-item-td bx-soa-item-properties">
-                                                            <div class="bx-soa-item-td-title visible-xs visible-sm">Размер</div>
-                                                            <div class="bx-soa-item-td-text"><span>50</span><br></div>
-                                                        </div>
-                                                        <div class="bx-soa-item-td bx-soa-item-properties bx-text-right">
-                                                            <div class="bx-soa-item-td-title visible-xs visible-sm">Цена, 1 шт.</div>
-                                                            <div class="bx-soa-item-td-text"><strong class="bx-price">3&nbsp;700 <span>₽</span></strong></div>
-                                                        </div>
-                                                        <div class="bx-soa-item-td bx-soa-item-properties bx-text-right">
-                                                            <div class="bx-soa-item-td-title visible-xs visible-sm">Количество</div>
-                                                            <div class="bx-soa-item-td-text"><span>2 шт</span></div>
-                                                        </div>
-                                                        <div class="bx-soa-item-td bx-soa-item-properties bx-text-right">
-                                                            <div class="bx-soa-item-td-title visible-xs visible-sm">Сумма за товар</div>
-                                                            <div class="bx-soa-item-td-text"><strong class="bx-price all">2&nbsp;400 <span>₽</span></strong><br><strong class="bx-price-old">6&nbsp;400 <span>₽</span></strong></div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="bx-soa-item-tr bx-soa-basket-info bx-soa-item-tr-first">
-                                                        <div class="bx-soa-item-td" style="min-width: 300px;">
-                                                            <div class="bx-soa-item-block">
-                                                                <div class="bx-soa-item-img-block">
-                                                                    <a href="#">
-                                                                        <div class="bx-soa-item-imgcontainer" style="background-image: url(files/order-4.jpg); background-image:-webkit-image-set(files/order-4.jpg) 1x, url(files/order-4.jpg) 2x)"></div>
-                                                                    </a>
-                                                                </div>
-                                                                <div class="bx-soa-item-content">
-                                                                    <div class="bx-soa-item-title">
-                                                                        <a href="#">Платье зимнее теплое длинное</a>
-                                                                        <span>1558_2</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="bx-soa-item-td bx-soa-item-properties">
-                                                            <div class="bx-soa-item-td-title visible-xs visible-sm">Размер</div>
-                                                            <div class="bx-soa-item-td-text"><span>50</span><br></div>
-                                                        </div>
-                                                        <div class="bx-soa-item-td bx-soa-item-properties bx-text-right">
-                                                            <div class="bx-soa-item-td-title visible-xs visible-sm">Цена, 1 шт.</div>
-                                                            <div class="bx-soa-item-td-text"><strong class="bx-price">3&nbsp;700 <span>₽</span></strong></div>
-                                                        </div>
-                                                        <div class="bx-soa-item-td bx-soa-item-properties bx-text-right">
-                                                            <div class="bx-soa-item-td-title visible-xs visible-sm">Количество</div>
-                                                            <div class="bx-soa-item-td-text"><span>2 шт</span></div>
-                                                        </div>
-                                                        <div class="bx-soa-item-td bx-soa-item-properties bx-text-right">
-                                                            <div class="bx-soa-item-td-title visible-xs visible-sm">Сумма за товар</div>
-                                                            <div class="bx-soa-item-td-text"><strong class="bx-price all">2&nbsp;400 <span>₽</span></strong><br><strong class="bx-price-old">6&nbsp;400 <span>₽</span></strong></div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="bx-soa-coupon">
-                                            <div class="bx-soa-coupon-label"><label>Применить купон:</label></div>
-                                            <div class="bx-soa-coupon-block">
-                                                <div class="bx-soa-coupon-input"><input class="form-control bx-ios-fix" type="text"></div>
-                                                <span class="bx-soa-coupon-item"></span>
-                                            </div>
-                                        </div>
-                                        <div class="row bx-soa-more">
-                                            <div class="bx-soa-more-btn col-xs-12"><a href="javascript:void(0)" class="pull-right btn btn-default btn-md">Далее</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- REGION BLOCK -->
-                                <div id="bx-soa-region" data-visited="true" class="bx-soa-section bx-active bx-selected">
-                                    <div class="bx-soa-section-title-container">
-                                        <h2 class="bx-soa-section-title col-sm-9"><span class="bx-soa-section-title-count"></span>Регион доставки</h2>
-                                        <div class="col-xs-12 col-sm-3 text-right"><a href="" class="bx-soa-editstep" style="">изменить</a></div>
-                                    </div>
-
-                                    <div class="bx-soa-section-content container-fluid">
-                                        <div class="bx_soa_location row">
-                                            <div class="col-xs-12">
-                                                <div data-property-id-row="11" class="form-group bx-soa-location-input-container">
-                                                    <label class="bx-soa-custom-label" for="soa-property-11"><span class="bx-authform-starrequired">*</span> Местоположение</label>
-                                                    <div id="sls-43047" class="bx-sls ">
-                                                        <div class="dropdown-block bx-ui-sls-input-block form-control">
-                                                            <span class="dropdown-icon"></span>
-                                                            <input type="text" autocomplete="off" name="ORDER_PROP_11" value="" class="dropdown-field" placeholder="Введите название ..." style="display: none;">
-                                                            <div class="bx-ui-sls-container" style="margin: 0px; padding: 0px; border: none; position: relative;">
-                                                                <input type="text" disabled="disabled" autocomplete="off" class="bx-ui-sls-route" style="padding: 0px; margin: 0px;">
-                                                                <input type="text" autocomplete="off" value="" class="bx-ui-sls-fake" placeholder="Введите название ...">
-                                                            </div>
-                                                            <div class="dropdown-fade2white"></div>
-                                                            <div class="bx-ui-sls-loader"></div>
-                                                            <div class="bx-ui-sls-clear" title="Отменить выбор" style="display: none;"></div>
-                                                            <div class="bx-ui-sls-pane" style="overflow: hidden auto;"><div class="bx-ui-sls-variants"></div></div>
-                                                        </div>
-                                                        <div class="bx-ui-sls-error-message"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group bx-soa-location-input-container" data-property-id-row="9">
-                                                    <label for="zipProperty" class="bx-soa-custom-label"><span class="bx-authform-starrequired">*</span> Индекс</label>
-                                                    <input id="zipProperty" type="text" placeholder="" autocomplete="zip" class="form-control bx-soa-customer-input bx-ios-fix" name="ORDER_PROP_9">
-                                                </div>
-                                                <div class="bx-soa-reference">Выберите свой город в списке. Если вы не нашли свой город, выберите "другое местоположение", а город впишите в поле "Город"</div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row bx-soa-more">
-                                            <div class="bx-soa-more-btn col-xs-12"><a href="javascript:void(0)" class="pull-left btn btn-default btn-md">Назад</a><a href="javascript:void(0)" class="pull-right btn btn-default btn-md">Далее</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- DELIVERY BLOCK -->
-                                <div id="bx-soa-delivery" data-visited="false" class="bx-soa-section bx-active">
-                                    <div class="bx-soa-section-title-container">
-                                        <h2 class="bx-soa-section-title col-sm-9"><span class="bx-soa-section-title-count"></span>Доставка</h2>
-                                        <div class="col-xs-12 col-sm-3 text-right"><a href="" class="bx-soa-editstep" style="display: none;">Изменить</a></div>
-                                    </div>
-                                </div>
-
-                                <!-- PAY SYSTEMS BLOCK -->
-                                <div id="bx-soa-paysystem" data-visited="false" class="bx-soa-section bx-active">
-                                    <div class="bx-soa-section-title-container">
-                                        <h2 class="bx-soa-section-title col-sm-9"><span class="bx-soa-section-title-count"></span>Оплата</h2>
-                                        <div class="col-xs-12 col-sm-3 text-right"><a href="" class="bx-soa-editstep" style="display: none;">Изменить</a></div>
-                                    </div>
-                                </div>
-
-                                <!-- BUYER PROPS BLOCK -->
-                                <div id="bx-soa-properties" data-visited="false" class="bx-soa-section bx-active">
-                                    <div class="bx-soa-section-title-container">
-                                        <h2 class="bx-soa-section-title col-sm-9"><span class="bx-soa-section-title-count"></span>Покупатель</h2>
-                                        <div class="col-xs-12 col-sm-3 text-right"><a href="" class="bx-soa-editstep" style="display: none;">Изменить</a></div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <!-- SIDEBAR BLOCK -->
-                            <div id="bx-soa-total" class="col-sm-3 bx-soa-sidebar">
-                                <div class="bx-soa-cart-total-ghost" style="padding-top: 0px;"></div>
-                                <div class="bx-soa-cart-total">
-                                    <div class="bx-soa-cart-total-line">
-                                        <span class="bx-soa-cart-t">Стоимость товаров</span>
-                                        <span class="bx-soa-cart-d">14&nbsp;600 <span>₽</span><br>
-                                            <span class="bx-price-old">37&nbsp;970 <span>₽</span></span>
-                                        </span>
-                                    </div>
-                                    <div class="bx-soa-cart-total-line">
-                                        <span class="bx-soa-cart-t">Доставка</span>
-                                        <span class="bx-soa-cart-d">0 <span>₽</span></span>
-                                    </div>
-                                    <div class="bx-soa-cart-total-line bx-soa-cart-total-line-highlighted">
-                                        <span class="bx-soa-cart-t">Скидка</span>
-                                        <span class="bx-soa-cart-d">4&nbsp;200 <span>₽</span></span>
-                                    </div>
-                                    <div class="bx-soa-cart-total-line bx-soa-cart-total-line-total">
-                                        <span class="bx-soa-cart-t">Итог</span>
-                                        <span class="bx-soa-cart-d">10&nbsp;200 <span>₽</span></span>
-                                    </div>
-                                    <div class="bx-soa-cart-total-button-container visible-xs">
-                                        <a href="javascript:void(0)" class="btn btn-default btn-lg btn-order-save">Оформить заказ</a>
-                                    </div>
-                                </div>
-                            </div>
+                    <!-- catalogue menu -->
+                    <div class="catalogue-menu">
+                        <div class="catalogue-menu-inner">
+                            <ul>
+                                <li><a href="#">Личные данные</a></li>
+                                <li><a href="#">Шкала лояльности</a></li>
+                                <li><a href="#">Избранное</a></li>
+                                <li><a href="#">Корзина</a></li>
+                                <li><a href="#">Текущие заказы</a></li>
+                                <li class="active"><a href="#">История заказов</a></li>
+                                <li><a href="#">Выход<img src="images/lk-menu-logout.svg" alt="" /></a></li>
+                            </ul>
                         </div>
+                    </div>
+                    <!-- catalogue menu END -->
 
-                    </form>
+                    <!-- catalogue container -->
+                    <div class="catalogue-container">
+                        <h1>Карточка заказа</h1>
+
+                        <!-- lk history card -->
+                        <div class="lk-history-card">
+
+                            <div class="row mb-3 mx-0">
+                                <div class="col sale-order-detail-card">
+
+                                    <h2 class="sale-order-detail-card-title">Заказы №880 от 09.08.2017, 1 товар на сумму 1 800 руб.</h2>
+
+                                    <div class="row mb-3">
+                                        <div class="col p-0">
+                                            <h3 class="sale-order-detail-section-title">Информация о заказе</h3>
+                                            <div class="row m-0">
+                                                <div class="col-sm mb-3">
+                                                    <div class="sale-order-detail-prop-name">Ф.И.О.:</div>
+                                                    <div class="sale-order-detail-prop-value">Иванов Иван</div>
+                                                    <div class="pt-3">
+                                                        <a href="" onclick="return false;" class="sale-order-detail-more-info-less">свернуть</a>
+                                                        <a href="" onclick="return false;" class="sale-order-detail-more-info-more">подробнее</a>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-auto mb-3">
+                                                    <div class="sale-order-detail-prop-name">Текуший статус, от 09.08.2017:</div>
+                                                    <div class="sale-order-detail-prop-value">Принят, ожидается оплата</div>
+                                                </div>
+
+                                                <div class="col-sm mb-3">
+                                                    <div class="sale-order-detail-prop-name">Сумма:</div>
+                                                    <div class="sale-order-detail-prop-value">1&nbsp;800 руб.</div>
+                                                </div>
+
+                                                <div class="col-sm-auto mb-3 text-center">
+                                                    <a href="#" class="btn btn-primary btn-block btn-sm my-1">Повторить заказ</a>
+                                                    <a href="#" class="btn btn-link btn-sm my-1">Отменить</a>
+                                                </div>
+                                            </div>
+
+                                            <div class="row m-0 sale-order-detail-more-info-details" style="display: none;">
+                                                <div class="col">
+                                                    <h4 class="sale-order-detail-more-info-details-title">Информация о пользователе</h4>
+
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered table-striped mb-3 sale-order-detail-more-info-details-table">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th>Логин:</th>
+                                                                    <td>admin</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>E-mail адрес:</th>
+                                                                    <td>
+                                                                        <a class="" href="mailto:support@bitrix.ru">support@bitrix.ru</a>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Тип плательщика:</th>
+                                                                    <td>Физическое лицо</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Ф.И.О.:</th>
+                                                                    <td>&lt;Без имени&gt;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>E-Mail:</th>
+                                                                    <td>support@bitrix.ru</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Телефон:</th>
+                                                                    <td>79273604947</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Индекс:</th>
+                                                                    <td>101000</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Местоположение:</th>
+                                                                    <td>Россия, Центр, Москва</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Город:</th>
+                                                                    <td>Москва</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Адрес доставки:</th>
+                                                                    <td>1</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <div class="col p-0">
+                                            <h3 class="sale-order-detail-section-title">Параметры оплаты</h3>
+
+                                            <div class="row pb-3 m-0 align-items-center">
+                                                <div class="col-lg-1 col-md-2 col-xs-2 d-none d-sm-block sale-order-detail-section-payment-image"></div>
+                                                <div class="col">
+                                                    <div class="sale-order-detail-payment-options-info-order-number">Заказы №880 от 09.08.2017, Принят, ожидает оплаты</div>
+                                                    <div class="sale-order-detail-payment-options-info-total-price">
+                                                        Сумма заказа:
+                                                        <span>1&nbsp;800 руб.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row m-0">
+                                                <div class="col sale-order-detail-payment-options-methods-container">
+                                                    <div class="row payment-options-methods-row">
+                                                        <div class="col sale-order-detail-payment-options-methods">
+                                                            <div class="row m-0 align-items-center sale-order-detail-payment-options-methods-information-block">
+                                                                <div class="col-auto d-none d-sm-block sale-order-detail-payment-options-methods-image-container">
+                                                                    <span class="sale-order-detail-payment-options-methods-image-element" style="background-image: url('images/order-payment-3.png');"></span>
+                                                                </div>
+                                                                <div class="col sale-order-detail-payment-options-methods-info">
+                                                                    <div class="mb-2 sale-order-detail-payment-options-methods-info-title">
+                                                                        <div class="sale-order-detail-methods-title">Счет №880 от 09.08.2017, <span class="sale-order-list-payment-title-element">Яндекс Деньги</span> <span class="sale-order-detail-payment-options-methods-info-title-status-alert">Не оплачено</span></div>
+                                                                    </div>
+                                                                    <div class="mb-2 sale-order-detail-payment-options-methods-info-total-price">
+                                                                        <span class="sale-order-detail-sum-name">Сумма к оплате по счету:</span>
+                                                                        <span class="sale-order-detail-sum-number">1&nbsp;800 руб.</span>
+                                                                    </div>
+                                                                    <a href="#" id="8/1" class="sale-order-detail-payment-options-methods-info-change-link">Сменить способ оплаты</a>
+                                                                </div>
+                                                                <div class="col-sm-auto col-12 sale-order-detail-payment-options-methods-button-container">
+                                                                    <button class="btn btn-primary btn-sm active-button">Оплатить</button>
+                                                                </div>
+                                                                <div class="sale-order-detail-payment-inner-row-template col-12">
+                                                                    <a href="" onclick="return false" class="sale-order-list-cancel-payment"><i class="fa fa-long-arrow-left"></i> назад</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row sale-order-detail-payment-options-methods-template">
+                                                                <span class="sale-paysystem-close active-button">
+                                                                    <span class="sale-paysystem-close-item sale-order-payment-cancel"></span>
+                                                                </span>
+                                                                <div class="col">
+                                                                    <div class="mb-4">Услугу предоставляет сервис онлайн-платежей <b>«Яндекс.Касса»</b>.<br><br>
+                                                                        Сумма к оплате по счету:  2&nbsp;570 руб.
+                                                                        <form id="paysystem-yandex-form" name="ShopForm" action="https://demomoney.yandex.ru/eshop.xml" method="post">
+                                                                            <input type="hidden" name="ShopID" value="">
+                                                                            <input type="hidden" name="scid" value="">
+                                                                            <input type="hidden" name="customerNumber" value="1">
+                                                                            <input type="hidden" name="orderNumber" value="8">
+                                                                            <input type="hidden" name="Sum" value="2570.00">
+                                                                            <input type="hidden" name="paymentType" value="AC">
+                                                                            <input type="hidden" name="cms_name" value="1C-Bitrix">
+                                                                            <input type="hidden" name="BX_HANDLER" value="YANDEX">
+                                                                            <input type="hidden" name="BX_PAYSYSTEM_CODE" value="4">
+
+                                                                            <div class="d-flex align-items-center justify-content-start">
+                                                                                <input class="btn btn-primary pl-4 pr-4" name="BuyButton" value="Оплатить" type="submit">
+                                                                                <p>Вы будете перенаправленны на страницу оплаты</p>
+                                                                            </div>
+
+                                                                            <p><b>Обратите внимание:</b> если вы откажетесь от покупки, для возврата денег вам придется обратиться в магазин.</p>
+                                                                        </form>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <div class="col p-0">
+                                            <h3 class="sale-order-detail-section-title">Параметры отгрузки</h3>
+
+                                            <div class="row mb-3">
+                                                <div class="col sale-order-detail-payment-options-shipment">
+                                                    <div class="row">
+                                                        <div class="col-2 sale-order-detail-payment-options-shipment-image-container">
+                                                            <span class="sale-order-detail-payment-options-shipment-image-element" style="background-image: url('images/order-delivery-5.png')"></span>
+                                                        </div>
+
+                                                        <div class="col sale-order-detail-payment-options-methods-shipment-list">
+                                                            <div class="mb-2 sale-order-detail-payment-options-methods-shipment-list-item-title">Отгрузка №880, стоимость доставки 500 руб.</div>
+                                                            <div class="mb-2 sale-order-detail-payment-options-methods-shipment-list-item">Служба доставки: Доставка курьером</div>
+
+                                                            <div class="mb-2 sale-order-detail-payment-options-methods-shipment-list-item">Статус отгрузки: Ожидает обработки</div>
+
+                                                            <div class="mt-3 mb-2 sale-order-detail-payment-options-methods-shipment-list-item-link">
+                                                                <a href="" onclick="return false" class="sale-order-detail-show-link">показать все</a>
+                                                                <a href="" onclick="return false" class="sale-order-detail-hide-link">свернуть</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row sale-order-detail-payment-options-shipment-composition-map" style="display: none;">
+                                                        <div class="col">
+
+                                                            <div class="row mx-0 mb-3">
+                                                                <div class="col">
+                                                                    <h3 class="sale-order-detail-more-info-details-title">Состав отгрузки</h3>
+                                                                    <div class="table-responsive">
+                                                                        <table class="table">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td class="sale-order-detail-order-item-img-block">
+                                                                                        <a href="#"><span class="sale-order-detail-order-item-img-container" style="background-image: url(files/order-1.jpg);"></span></a>
+                                                                                    </td>
+                                                                                    <td class="sale-order-detail-order-item-properties" style="min-width: 250px;">
+                                                                                        <a class="sale-order-detail-order-item-title" href="#">Платье зимнее теплое длинное</a>
+                                                                                        <div>Артикул: 4267</div>
+                                                                                        <div>Размер: 50</div>
+                                                                                    </td>
+                                                                                    <td class="sale-order-detail-order-item-properties">Количество: 2&nbsp;шт</td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <div class="col p-0">
+                                            <h3 class="sale-order-detail-section-title">Содержимое заказа</h3>
+
+                                            <div class="row mx-0">
+                                                <div class="col">
+                                                    <div class="table-responsive">
+                                                        <table class="table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th scope="col"></th>
+                                                                    <th scope="col">Название товара</th>
+                                                                    <th scope="col">Цена, 1 шт</th>
+                                                                    <th scope="col">Кол-во</th>
+                                                                    <th class="text-right">Сумма за товар</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="sale-order-detail-order-item-img-block">
+                                                                        <a href="#">
+                                                                            <div class="sale-order-detail-order-item-img-container" style="background-image: url(files/order-1.jpg);"></div>
+                                                                        </a>
+                                                                    </td>
+                                                                    <td class="sale-order-detail-order-item-properties" style="min-width: 250px;">
+                                                                        <a class="sale-order-detail-order-item-title" href="#">Платье зимнее теплое длинное</a>
+                                                                        <div class="sale-order-detail-order-item-properties-type">4267</div>
+                                                                    </td>
+                                                                    <td class="sale-order-detail-order-item-properties">
+                                                                        <span class="bx-price">1&nbsp;200 руб.</span>
+                                                                    </td>
+                                                                    <td class="sale-order-detail-order-item-properties">3&nbsp;шт</td>
+                                                                    <td class="sale-order-detail-order-item-properties text-right">
+                                                                        <strong class="bx-price">2&nbsp;400 руб.</strong>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="row sale-order-detail-total-payment">
+                                        <div class="col sale-order-detail-total-payment-container">
+                                            <div class="row">
+                                                <ul class="col-md-8 col sale-order-detail-total-payment-list-left">
+                                                    <li class="sale-order-detail-total-payment-list-left-item">Стоимость доставки:</li>
+                                                    <li class="sale-order-detail-total-payment-list-left-item">Итого:</li>
+                                                </ul>
+                                                <ul class="col-md-4 col sale-order-detail-total-payment-list-right">
+                                                    <li class="sale-order-detail-total-payment-list-right-item">500 руб.</li>
+                                                    <li class="sale-order-detail-total-payment-list-right-item">1&nbsp;800 руб.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- lk history card END -->
+
+                    </div>
+                    <!-- catalogue container END -->
 
                 </div>
-                <!-- order END -->
+                <!-- catalogue END -->
 
             </div>
             <!-- container END -->
