@@ -873,9 +873,10 @@ a.catalogue-item-size:active {background:rgba(122, 52, 166, 0.12); border-color:
     .product .catalogue-item-event-hit {font-size:15px}
 }
 
+.product-container.loading {position:relative}
+.product-container.loading::after {content:""; display:block; position:absolute; left:-20px; top:0; right:-20px; bottom:0; background:rgba(255, 255, 255, 0.6) url(../images/loading-big.gif) no-repeat center; z-index:3}
+
 .product-gallery {float:left; width:435px; line-height:0; font-size:0; letter-spacing:-1px; position:relative}
-.product-gallery.loading {}
-.product-gallery.loading::after {content:""; display:block; position:absolute; left:-20px; top:0; right:-20px; bottom:0; background:rgba(255, 255, 255, 0.6) url(../images/loading-big.gif) no-repeat center; z-index:3}
 .product-gallery-big {white-space:nowrap; width:100%; position:relative; overflow:hidden}
 .product-gallery-big-item {display:inline-block; vertical-align:top; width:100%; margin:0; padding:0}
 .product-gallery-big-item img {display:block; width:100%}
