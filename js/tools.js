@@ -830,42 +830,6 @@ $(document).ready(function() {
         e.preventDefault();
     });
     
-    $('.auth-form-phone').each(function() {
-        var curForm = $(this);
-        var validator = curForm.validate();
-        validator.destroy();
-        curForm.validate({
-            ignore: '',
-            submitHandler: function(form) {
-                curForm.addClass('loading');
-                curForm.find('.form-error').remove();
-                if (!curForm.hasClass('sms')) {
-                    $.ajax({
-                        type: 'POST',
-                        url: curForm.attr('data-phone'),
-                        dataType: 'json',
-                        data: curForm.serialize(),
-                        cache: false,
-                        timeout: 30000
-                    }).fail(function(jqXHR, textStatus, errorThrown) {
-                        curForm.removeClass('loading');
-                        curForm.prepend('<div class="form-error"><div class="form-error-title">Произошла ошибка</div><div class="form-error-text">Сервис временно недоступен, попробуйте позже.</div></div>');
-                    }).done(function(data) {
-                        curForm.removeClass('loading');
-                        if (data.status == 'ok') {
-                            $('.auth-form-phone').addClass('sms');
-                            $('.auth-form-sms-input').attr('required', 'required').trigger('focus');
-                        } else {
-                            $(form).prepend('<div class="form-error"><div class="form-error-title">Произошла ошибка</div><div class="form-error-text">' + data.errorMessage + '</div></div>');
-                        }
-                    });
-                } else {
-                    form.submit();
-                }
-            }
-        });
-    });
-
 });
 
 function updateFilterMobile() {
@@ -891,20 +855,6 @@ function updateFilterMobile() {
 
 function filterCatalogue() {
     updateFilterMobile();
-    $('.catalogue-wrapper').addClass('loading');
-    var curForm = $('.catalogue-filter form');
-    var curData = curForm.serialize();
-    $.ajax({
-        type: 'POST',
-        url: curForm.attr('action'),
-        dataType: 'html',
-        data: curData,
-        cache: false
-    }).done(function(html) {
-        $('.catalogue-wrapper').html(html);
-        $(window).trigger('resize');
-        $('.catalogue-wrapper').removeClass('loading');
-    });
 }
 
 $(window).on('load resize', function() {
@@ -1029,7 +979,7 @@ function initForm(curForm) {
         }
     });
 
-    curForm.find('input.birthdate').mask('99/99/9999');
+    curForm.find('input.birthdate').mask('99.99.9999');
 
     if (curForm.find('.policy-checkbox').length == 1 && !curForm.find('.policy-checkbox').prop('checked')) {
         curForm.find('.form-submit input').prop('disabled', true);
