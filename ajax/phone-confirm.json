@@ -1,9 +1,10 @@
 {
     "status"        : true,
     "message"       : "Сообщение в случае ошибки",
+    "check"         : true,
     "timer"         : 5,
     "confirm"       : true,
     "code"          : "123",
-    "reload"        : false,
+    "reload"        : true,
     "url"           : "index.html"
 }

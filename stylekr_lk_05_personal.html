@@ -333,7 +333,20 @@
                                 <div class="form-input"><input type="text" name="birthdate" value="" class="birthdate" placeholder="__/__/__" /></div>
 
                                 <div class="form-label">Телефон<span>*</span></div>
-                                <div class="form-input form-input-phone-confirm-success"><input type="text" name="phone" value="8 (921) 791-33-82" class="required phoneRU" placeholder="+7 0000000000" /><div class="phone-confirm-success-text">Номер подтвержден</div></div>
+                                <div class="phone-confirm" data-ajax="ajax/phone-confirm.json" data-params="hashcode">
+                                    <div class="form-input form-input-phone-confirm-success"><input type="text" name="phone" value="+7 11111111111" class="required phoneRU" placeholder="+7 0000000000" /><div class="phone-confirm-success-text">Номер подтвержден</div></div>
+                                    <a href="#" class="phone-confirm-start btn" style="display:none">Подтвердить</a>
+                                    <div class="phone-confirm-code">
+                                        <div class="form-label">Код потверждения<span>*</span></div>
+                                        <div class="phone-confirm-code-row">
+                                            <div class="form-input"><input type="text" name="phone_code" value="" /></div>
+                                            <a href="#" class="phone-confirm-code-send btn">Подтвердить</a>
+                                            <div class="phone-confirm-code-loading"></div>
+                                        </div>
+                                        <div class="phone-conform-code-request-text">Вы можете отправить код повторно через <span>60</span> сек</div>
+                                        <div class="phone-conform-code-request-link"><a href="#">Отправить код повторно</a></div>
+                                    </div>
+                                </div>
 
                                 <div class="form-label">E-mail<span>*</span></div>
                                 <div class="form-input"><input type="text" name="email" value="" class="required email" /></div>

@@ -893,19 +893,20 @@ $(document).ready(function() {
                 dataType: 'json',
                 cache: false,
                 success: function(data) {
+                    curForm.find('.phone-confirm > .form-input').removeClass('loading');
+                    curForm.find('.phone-confirm > .form-input input').prop('disabled', false);
+                    curForm.find('.phone-confirm .message-error').remove();
                     if (data.status) {
-                        curForm.find('.phone-confirm > .form-input').removeClass('loading');
-                        curForm.find('.phone-confirm .message-error').remove();
-                        curForm.find('.phone-confirm-code').show();
-                        curForm.find('.phone-confirm-code-row .form-input input').val(data.code);
-                        curForm.find('.phone-confirm-code-row .form-input input').trigger('focus');
-                        curForm.find('.phone-confirm-code-row .form-input input').addClass('required');
-                        reSMSperiod = data.timer;
-                        curForm.find('.phone-conform-code-request-text span').html(reSMSperiod);
-                        window.setTimeout(updateTimerSMS, 1000);
                         if (data.confirm) {
-                            curForm.find('.phone-confirm .message-error').remove();
-                            curForm.find('.phone-confirm > .form-input input').prop('disabled', false);
+                            curForm.find('.phone-confirm-code').show();
+                            curForm.find('.phone-confirm-code-row .form-input input').val(data.code);
+                            curForm.find('.phone-confirm-code-row .form-input input').trigger('focus');
+                            curForm.find('.phone-confirm-code-row .form-input input').addClass('required');
+                            reSMSperiod = data.timer;
+                            curForm.find('.phone-conform-code-request-text span').html(reSMSperiod);
+                            window.setTimeout(updateTimerSMS, 1000);
+                        }
+                        if (data.check) {
                             curForm.find('.phone-confirm-code').hide();
                             curForm.find('.phone-confirm > .form-input').addClass('form-input-phone-confirm-success');
                             curForm.find('.phone-confirm > .form-input').append('<div class="phone-confirm-success-text">Номер подтвержден</div>');
@@ -914,18 +915,15 @@ $(document).ready(function() {
                             window.location.href = data.url;
                         }
                     } else {
-                        curForm.find('.phone-confirm > .form-input').removeClass('loading');
-                        curForm.find('.phone-confirm > .form-input input').prop('disabled', false);
                         curForm.find('.phone-confirm-start').show();
-                        curForm.find('.phone-confirm .message-error').remove();
                         curForm.find('.phone-confirm').append('<div class="message-error"><div class="message-error-title">Ошибка</div><div class="message-error-text">' + data.message + '</div></div>');
                     }
                 },
                 error: function() {
                     curForm.find('.phone-confirm > .form-input').removeClass('loading');
                     curForm.find('.phone-confirm > .form-input input').prop('disabled', false);
-                    curForm.find('.phone-confirm-start').show();
                     curForm.find('.phone-confirm .message-error').remove();
+                    curForm.find('.phone-confirm-start').show();
                     curForm.find('.phone-confirm').append('<div class="message-error"><div class="message-error-title">Ошибка</div><div class="message-error-text">Загрузка данных невозможна</div></div>');
                 }
             });
@@ -947,27 +945,38 @@ $(document).ready(function() {
                 dataType: 'json',
                 cache: false,
                 success: function(data) {
-                    if (data.reload) {
-                        window.location.href = data.url;
-                    }
-                    if (data.confirm) {
-                        curForm.find('.phone-confirm .message-error').remove();
-                        curForm.find('.phone-confirm-code').hide();
-                        curForm.find('.phone-confirm > .form-input').addClass('form-input-phone-confirm-success');
-                        curForm.find('.phone-confirm > .form-input').append('<div class="phone-confirm-success-text">Номер подтвержден</div>');
+                    curForm.find('.phone-confirm-code-row .form-input').removeClass('loading');
+                    curForm.find('.phone-confirm-code-row .form-input input').prop('disabled', false);
+                    curForm.find('.phone-confirm .message-error').remove();
+                    if (data.status) {
+                        if (data.confirm) {
+                            curForm.find('.phone-confirm-code').show();
+                            curForm.find('.phone-confirm-code-row .form-input input').val(data.code);
+                            curForm.find('.phone-confirm-code-row .form-input input').trigger('focus');
+                            curForm.find('.phone-confirm-code-row .form-input input').addClass('required');
+                            curForm.find('.phone-confirm-code-send').show();
+                            reSMSperiod = data.timer;
+                            curForm.find('.phone-conform-code-request-text span').html(reSMSperiod);
+                            window.setTimeout(updateTimerSMS, 1000);
+                        }
+                        if (data.check) {
+                            curForm.find('.phone-confirm-code').hide();
+                            curForm.find('.phone-confirm > .form-input').addClass('form-input-phone-confirm-success');
+                            curForm.find('.phone-confirm > .form-input').append('<div class="phone-confirm-success-text">Номер подтвержден</div>');
+                        }
+                        if (data.reload) {
+                            window.location.href = data.url;
+                        }
                     } else {
-                        curForm.find('.phone-confirm-code-row .form-input').removeClass('loading');
-                        curForm.find('.phone-confirm-code-row .form-input input').prop('disabled', false);
                         curForm.find('.phone-confirm-code-send').show();
-                        curForm.find('.phone-confirm .message-error').remove();
                         curForm.find('.phone-confirm').append('<div class="message-error"><div class="message-error-title">Ошибка</div><div class="message-error-text">' + data.message + '</div></div>');
                     }
                 },
                 error: function() {
                     curForm.find('.phone-confirm-code-row .form-input').removeClass('loading');
                     curForm.find('.phone-confirm-code-row .form-input input').prop('disabled', false);
-                    curForm.find('.phone-confirm-code-send').show();
                     curForm.find('.phone-confirm .message-error').remove();
+                    curForm.find('.phone-confirm-code-send').show();
                     curForm.find('.phone-confirm').append('<div class="message-error"><div class="message-error-title">Ошибка</div><div class="message-error-text">Загрузка данных невозможна</div></div>');
                 }
             });
@@ -1003,32 +1012,37 @@ $(document).ready(function() {
                 dataType: 'json',
                 cache: false,
                 success: function(data) {
+                    curForm.find('.phone-confirm > .form-input').removeClass('loading');
+                    curForm.find('.phone-confirm > .form-input input').prop('disabled', false);
+                    curForm.find('.phone-confirm .message-error').remove();
                     if (data.status) {
-                        curForm.find('.phone-confirm > .form-input').removeClass('loading');
-                        curForm.find('.phone-confirm .message-error').remove();
-                        curForm.find('.phone-confirm-code').show();
-                        curForm.find('.phone-confirm-code-row .form-input input').val(data.code);
-                        curForm.find('.phone-confirm-code-row .form-input input').trigger('focus');
-                        curForm.find('.phone-confirm-code-row .form-input input').addClass('required');
-                        reSMSperiod = data.timer;
-                        curForm.find('.phone-conform-code-request-text span').html(reSMSperiod);
-                        window.setTimeout(updateTimerSMS, 1000);
+                        if (data.confirm) {
+                            curForm.find('.phone-confirm-code').show();
+                            curForm.find('.phone-confirm-code-row .form-input input').val(data.code);
+                            curForm.find('.phone-confirm-code-row .form-input input').trigger('focus');
+                            curForm.find('.phone-confirm-code-row .form-input input').addClass('required');
+                            reSMSperiod = data.timer;
+                            curForm.find('.phone-conform-code-request-text span').html(reSMSperiod);
+                            window.setTimeout(updateTimerSMS, 1000);
+                        }
+                        if (data.check) {
+                            curForm.find('.phone-confirm-code').hide();
+                            curForm.find('.phone-confirm > .form-input').addClass('form-input-phone-confirm-success');
+                            curForm.find('.phone-confirm > .form-input').append('<div class="phone-confirm-success-text">Номер подтвержден</div>');
+                        }
                         if (data.reload) {
                             window.location.href = data.url;
                         }
                     } else {
-                        curForm.find('.phone-confirm > .form-input').removeClass('loading');
-                        curForm.find('.phone-confirm > .form-input input').prop('disabled', false);
                         curForm.find('.phone-confirm-start').show();
-                        curForm.find('.phone-confirm .message-error').remove();
                         curForm.find('.phone-confirm').append('<div class="message-error"><div class="message-error-title">Ошибка</div><div class="message-error-text">' + data.message + '</div></div>');
                     }
                 },
                 error: function() {
                     curForm.find('.phone-confirm > .form-input').removeClass('loading');
                     curForm.find('.phone-confirm > .form-input input').prop('disabled', false);
-                    curForm.find('.phone-confirm-start').show();
                     curForm.find('.phone-confirm .message-error').remove();
+                    curForm.find('.phone-confirm-start').show();
                     curForm.find('.phone-confirm').append('<div class="message-error"><div class="message-error-title">Ошибка</div><div class="message-error-text">Загрузка данных невозможна</div></div>');
                 }
             });
@@ -1055,8 +1069,10 @@ $(document).ready(function() {
                         success: function(data) {
                             if (data.status) {
                                 curForm.removeClass('loading');
-                                curForm.addClass('sms');
-                                curForm.find('.auth-form-sms-input').val(data.code);
+                                if (data.confirm) {
+                                    curForm.addClass('sms');
+                                    curForm.find('.auth-form-sms-input').val(data.code);
+                                }
                                 if (data.reload) {
                                     window.location.href = data.url;
                                 }
