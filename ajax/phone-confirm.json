@@ -1,0 +1,9 @@
+{
+    "status"        : true,
+    "message"       : "Сообщение в случае ошибки",
+    "timer"         : 5,
+    "confirm"       : true,
+    "code"          : "123",
+    "reload"        : false,
+    "url"           : "index.html"
+}
