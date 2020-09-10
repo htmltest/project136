@@ -1076,6 +1076,11 @@ $(document).ready(function() {
                                 if (data.reload) {
                                     window.location.href = data.url;
                                 }
+                                reSMSperiod = data.timer;
+                                $('.auth-code-request-text').show();
+                                $('.auth-code-request-link').hide();
+                                curForm.find('.auth-code-request-text span').html(reSMSperiod);
+                                window.setTimeout(updateTimerSMSAuth, 1000);
                             } else {
                                 curForm.removeClass('loading');
                                 curForm.prepend('<div class="form-error"><div class="form-error-title">Произошла ошибка</div><div class="form-error-text">' + data.message + '</div></div>');
@@ -1099,6 +1104,11 @@ $(document).ready(function() {
                                 if (data.reload) {
                                     window.location.href = data.url;
                                 }
+                                reSMSperiod = data.timer;
+                                $('.auth-code-request-text').show();
+                                $('.auth-code-request-link').hide();
+                                curForm.find('.auth-code-request-text span').html(reSMSperiod);
+                                window.setTimeout(updateTimerSMSAuth, 1000);
                             } else {
                                 curForm.removeClass('loading');
                                 curForm.prepend('<div class="form-error"><div class="form-error-title">Произошла ошибка</div><div class="form-error-text">' + data.message + '</div></div>');
@@ -1112,6 +1122,90 @@ $(document).ready(function() {
                 }
             }
         });
+    });
+
+    function updateTimerSMSAuth() {
+        reSMSperiod--;
+        $('.auth-code-request-text span').html(reSMSperiod);
+        if (reSMSperiod <= 0) {
+            $('.auth-code-request-text').hide();
+            $('.auth-code-request-link').show();
+        } else {
+            window.setTimeout(updateTimerSMSAuth, 1000);
+        }
+    }
+
+    $('.auth-code-request-link a').click(function(e) {
+        var curForm = $(this).parents().filter('form');
+        var validator = curForm.validate();
+        $('.auth-code-request-text').hide();
+        $('.auth-code-request-link').hide();
+        if (validator.element(curForm.find('.auth-form-phone-input'))) {
+            curForm.addClass('loading');
+            curForm.find('.form-error').remove();
+            if (!curForm.hasClass('sms')) {
+                $.ajax({
+                    type: 'POST',
+                    url: curForm.attr('data-ajax'),
+                    data: {"phone": curForm.find('.auth-form-phone-input').val(), "resend": true, "params": curForm.attr('data-params')},
+                    dataType: 'json',
+                    cache: false,
+                    success: function(data) {
+                        if (data.status) {
+                            curForm.removeClass('loading');
+                            if (data.confirm) {
+                                curForm.addClass('sms');
+                                curForm.find('.auth-form-sms-input').val(data.code);
+                            }
+                            if (data.reload) {
+                                window.location.href = data.url;
+                            }
+                            reSMSperiod = data.timer;
+                            $('.auth-code-request-text').show();
+                            $('.auth-code-request-link').hide();
+                            curForm.find('.auth-code-request-text span').html(reSMSperiod);
+                            window.setTimeout(updateTimerSMSAuth, 1000);
+                        } else {
+                            curForm.removeClass('loading');
+                            curForm.prepend('<div class="form-error"><div class="form-error-title">Произошла ошибка</div><div class="form-error-text">' + data.message + '</div></div>');
+                        }
+                    },
+                    error: function() {
+                        curForm.removeClass('loading');
+                        curForm.prepend('<div class="form-error"><div class="form-error-title">Произошла ошибка</div><div class="form-error-text">Сервис временно недоступен, попробуйте позже.</div></div>');
+                    }
+                });
+            } else {
+                $.ajax({
+                    type: 'POST',
+                    url: curForm.attr('data-ajax'),
+                    data: {"phone": curForm.find('.auth-form-phone-input').val(), "params": curForm.attr('data-params'), "code": curForm.find('.auth-form-sms-input').val()},
+                    dataType: 'json',
+                    cache: false,
+                    success: function(data) {
+                        if (data.status) {
+                            curForm.removeClass('loading');
+                            if (data.reload) {
+                                window.location.href = data.url;
+                            }
+                            reSMSperiod = data.timer;
+                            $('.auth-code-request-text').show();
+                            $('.auth-code-request-link').hide();
+                            curForm.find('.auth-code-request-text span').html(reSMSperiod);
+                            window.setTimeout(updateTimerSMSAuth, 1000);
+                        } else {
+                            curForm.removeClass('loading');
+                            curForm.prepend('<div class="form-error"><div class="form-error-title">Произошла ошибка</div><div class="form-error-text">' + data.message + '</div></div>');
+                        }
+                    },
+                    error: function() {
+                        curForm.removeClass('loading');
+                        curForm.prepend('<div class="form-error"><div class="form-error-title">Произошла ошибка</div><div class="form-error-text">Сервис временно недоступен, попробуйте позже.</div></div>');
+                    }
+                });
+            }
+        }
+        e.preventDefault();
     });
 
 });
