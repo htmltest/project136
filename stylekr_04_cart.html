@@ -298,7 +298,7 @@
                 <h1>Корзина</h1>
 
                 <!-- cart -->
-                <div id="basket-root" class="bx-basket bx-blue bx-step-opacity" style="opacity: 1;">
+                <div id="basket-root" class="bx-basket bx-blue bx-step-opacity loading" style="opacity: 1;">
                     <div class="row">
                         <div class="col-xs-12" data-entity="basket-total-block">
                             <div class="basket-checkout-container" data-entity="basket-checkout-aligner">
@@ -342,42 +342,13 @@
                                             </div>
                                         </div>
 
-                                        <div class="basket-total-coupon">
-                                            <div class="basket-total-coupon-input">
-                                                <input type="text" id="basketCoupon" placeholder="Промокод" class="accept" />
-                                                <button onclick="SBasket.coupon($('#basketCoupon'))">Применить</button>
-                                            </div>
-                                            <div class="basket-total-coupon-list h">
-                                                <div class="basket-total-coupon-item ">
-                                                    <span class="coupon">KCI100</span>
-                                                    <a href="javascript:void(0)" onclick="SBasket.couponRemove('KCI100')" class="basket-total-coupon-remove">Удалить</a>
-                                                </div>
-                                                <div class="basket-total-coupon-item ">
-                                                    <span class="coupon">KC332I100</span>
-                                                    <a href="javascript:void(0)" onclick="SBasket.couponRemove('KC332I100')" class="basket-total-coupon-remove">Удалить</a>
-                                                </div>
-                                                <div class="basket-total-coupon-item ">
-                                                    <span class="coupon">KC332I100</span>
-                                                    <a href="javascript:void(0)" onclick="SBasket.couponRemove('KC332I100')" class="basket-total-coupon-remove">Удалить</a>
-                                                </div>
-                                                <div class="basket-total-coupon-item ">
-                                                    <span class="coupon">KCI100</span>
-                                                    <a href="javascript:void(0)" onclick="SBasket.couponRemove('KCI100')" class="basket-total-coupon-remove">Удалить</a>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
                                         <div class="basket-checkout-block basket-checkout-block-btn">
                                             <button class="btn btn-lg btn-default basket-btn-checkout" data-entity="basket-checkout-button">
                                                 Оформить заказ
                                             </button>
                                         </div>
-                                        
                                     </div>
                                 </div>
-                                
-                                <p><br /><button onclick="basketCouponError()">Тест купона. Ошибка</button></p>
 
                                 <div class="basket-coupon-alert-section">
                                     <div class="basket-coupon-alert-inner">
