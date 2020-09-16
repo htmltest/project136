@@ -2657,7 +2657,7 @@ a.catalogue-item-size:active {background:rgba(122, 52, 166, 0.12); border-color:
 .lk-history .sale-order-list-inner-title-line {display:none}
 .lk-history .sale-order-list-inner-row {padding:4px 30px 30px 30px; border-left:1px solid #e2e2e2; border-right:1px solid #e2e2e2; position:relative}
 .lk-history .sale-order-list-button-container {position:absolute; right:30px; top:3px}
-.lk-history .sale-order-list-payment-title {font-weight:normal}
+.lk-history .sale-order-list-payment-title {font-weight:normal; max-width:calc(100% - 135px)}
 .lk-history .sale-order-list-status-alert {display:inline-block; vertical-align:middle; margin:-8px 0 0 5px; height:25px; border:1px solid rgba(230, 34, 34, 0.34); border-radius:2px; background:#fdeeee; padding:0 9px; font-size:14px; font-weight:normal; line-height:25px; color:#e62222}
 .lk-history .sale-order-list-payment-price {margin:4px 0 6px 0}
 .lk-history .sale-order-list-change-payment {font-weight:normal; font-size:16px; line-height:24px}
@@ -2684,12 +2684,25 @@ a.catalogue-item-size:active {background:rgba(122, 52, 166, 0.12); border-color:
 .lk-history .sale-order-list-cancel-link:hover {background:#8c39bf; color:#fff}
 .lk-history .sale-order-list-cancel-link:active {background:#7a34a6; color:#fff}
 
+.lk-history .sale-order-payment-change-payment-title {font-weight:normal; font-size:16px; line-height:24px; max-width:calc(100% - 135px)}
+.lk-history .sale-order-payment-change-status-alert {display:inline-block; vertical-align:middle; margin:-8px 0 0 5px; height:25px; border:1px solid rgba(230, 34, 34, 0.34); border-radius:2px; background:#fdeeee; padding:0 9px; font-size:14px; font-weight:normal; line-height:25px; color:#e62222}
+.lk-history .sale-order-payment-change-payment-price {margin:7px 0 0 0; font-size:16px; line-height:24px}
+.lk-history .sale-order-payment-change-payment-number span {font-family:Rubik, sans-serif}
+.lk-history .sale-order-payment-change-pp-list {margin:10px 0 0 -20px; font-size:0; line-height:0; letter-spacing:-1px}
+.lk-history .sale-order-payment-change-pp-company {display:inline-block; vertical-align:top; margin:20px 0 0 20px; width:146px}
+.lk-history .sale-order-payment-change-pp-company-image {height:82px; border:1px solid #e8e8e8; background:no-repeat center; background-size:cover}
+.lk-history .sale-order-payment-change-pp-company-smalltitle {padding:10px 0 0 0; font-size:18px; line-height:27px; letter-spacing:0; color:#181818}
+.lk-history .sale-order-list-cancel-payment {margin:20px 0 0 0; font-size:16px; line-height:24px; font-weight:normal}
+.lk-history .sale-order-list-cancel-payment i {display:inline-block; vertical-align:middle; width:8px; height:14px; background:url(../images/sale-order-list-cancel-payment.svg) no-repeat; margin:-4px 4px 0 0}
+
 @media screen and (max-width:1079px) {
     .lk-history h2 {font-weight:500; margin:20px 0 0 0}
     .lk-history .sale-order-list-title-container h3 {font-weight:normal; font-size:20px; line-height:28px; margin:31px 0 0 0; background:#f5f5f5; border:1px solid #e2e2e2; padding:20px; border-bottom:none}
     .lk-history .sale-order-list-inner-title-line-item {padding:20px 20px 0 20px}
     .lk-history .sale-order-list-inner-row {padding:1px 20px 109px 20px}
+    .lk-history .sale-order-list-payment-title {max-width:none}
     .lk-history .sale-order-list-payment-title::after {content:""; display:block; clear:both}
+    .lk-history .sale-order-list-payment-element {float:left}
     .lk-history .sale-order-list-status-alert {display:block; float:left; margin:4px 0 0 0; height:39px; line-height:39px; font-size:18px}
     .lk-history .sale-order-list-payment-price {margin:26px 0 10px 0}
     .lk-history .sale-order-list-change-payment {font-size:18px; line-height:27px}
@@ -2697,7 +2710,7 @@ a.catalogue-item-size:active {background:rgba(122, 52, 166, 0.12); border-color:
     .lk-history .sale-order-list-button-container .btn {width:163px; height:50px; line-height:50px; font-size:20px; font-weight:normal}
     .lk-history .sale-order-list-inner-container > .mb-3:nth-child(4) {padding:10px 20px 27px 20px}
     .lk-history .sale-order-list-shipment-title::after {content:""; display:block; clear:both}
-    .lk-history .sale-order-list-shipment-element {display:block}
+    .lk-history .sale-order-list-shipment-element {float:left; display:block}
     .lk-history .sale-order-list-shipment-status {margin:26px 0 0 0}
     .lk-history .sale-order-list-shipment-status::after {content:""; display:block; clear:both}
     .lk-history .sale-order-list-shipment-status-item {display:block}
@@ -2707,6 +2720,11 @@ a.catalogue-item-size:active {background:rgba(122, 52, 166, 0.12); border-color:
     .lk-history .sale-order-list-about-link {float:none; display:block; padding:0; height:50px; font-size:20px; line-height:50px; font-weight:300}
     .lk-history .sale-order-list-repeat-link {float:none; display:block; padding:0; height:50px; font-size:20px; line-height:50px; font-weight:300; margin:20px 0 0 0}
     .lk-history .sale-order-list-cancel-link {float:none; display:block; padding:0 0; height:50px; font-size:20px; line-height:48px; font-weight:300; margin:20px 0 0 0}
+
+    .lk-history .sale-order-payment-change-payment-title {font-size:18px; line-height:27px; max-width:none; display:block}
+    .lk-history .sale-order-payment-change-payment-title::after {content:""; display:block; clear:both}
+    .lk-history .sale-order-payment-change-payment-title-element {float:left}
+    .lk-history .sale-order-payment-change-status-alert {display:block; float:left; clear:left; margin:4px 0 0 0; height:39px; line-height:39px; font-size:18px}
 }
 
 .lk-history-card .sale-order-detail-card-title {font-weight:normal; font-size:24px; line-height:34px; margin:25px 0 0 0}
@@ -2716,7 +2734,9 @@ a.catalogue-item-size:active {background:rgba(122, 52, 166, 0.12); border-color:
 .lk-history-card .sale-order-detail-card-title+.row .sale-order-detail-prop-name {margin:16px 0 0 0}
 .lk-history-card .sale-order-detail-card-title+.row .sale-order-detail-prop-value {margin:4px 0 0 0; font-weight:normal}
 .lk-history-card .sale-order-detail-card-title+.row .sale-order-detail-more-info-more {position:absolute; right:30px; bottom:27px; font-size:16px; line-height:24px; font-weight:normal}
+.lk-history-card .sale-order-detail-card-title+.row .sale-order-detail-more-info-less {position:absolute; right:30px; bottom:27px; font-size:16px; line-height:24px; font-weight:normal}
 .lk-history-card .sale-order-detail-card-title+.row .sale-order-detail-more-info-more::after {content:""; display:inline-block; vertical-align:middle; width:14px; height:8px; background:url(../images/sale-order-list-change-payment.svg) no-repeat; margin:-4px 0 0 8px}
+.lk-history-card .sale-order-detail-card-title+.row .sale-order-detail-more-info-less::after {content:""; display:inline-block; vertical-align:middle; width:14px; height:8px; background:url(../images/sale-order-list-change-payment.svg) no-repeat; margin:-4px 0 0 8px; transform:rotate(-180deg)}
 .lk-history-card .sale-order-detail-card-title+.row .btn-primary {position:absolute; right:30px; top:30px; padding:0 15px; height:34px; font-size:16px; line-height:32px; font-weight:normal}
 .lk-history-card .sale-order-detail-card-title+.row .btn-link {position:absolute; right:30px; top:74px; padding:0 15px; height:34px; font-size:16px; line-height:32px; font-weight:normal; background:#fff; color:#7a34a6; border:1px solid #7a34a6}
 .lk-history-card .sale-order-detail-card-title+.row .btn-link:hover {background:#8c39bf; color:#fff}
@@ -2780,7 +2800,7 @@ a.catalogue-item-size:active {background:rgba(122, 52, 166, 0.12); border-color:
 .lk-history-card table tbody td:first-child {padding:20px 0 20px 0}
 .lk-history-card table tbody tr:nth-child(odd) td {background:none}
 .lk-history-card table tbody td.sale-order-detail-order-item-img-block {width:76px}
-.lk-history-card .sale-order-detail-order-item-img-container {width:76px; height:100px; background:no-repeat center; background-size:cover}
+.lk-history-card .sale-order-detail-order-item-img-container {display:block; width:76px; height:100px; background:no-repeat center; background-size:cover}
 .lk-history-card .sale-order-detail-order-item-title {font-size:16px; line-height:19px; font-weight:normal; color:#2f2f2f}
 .lk-history-card .sale-order-detail-order-item-properties-type {font-size:14px; line-height:17px; color:#797979}
 .lk-history-card .sale-order-detail-order-item-properties {font-size:16px; line-height:19px; font-weight:normal; color:#2f2f2f}
@@ -2840,3 +2860,35 @@ a.catalogue-item-size:active {background:rgba(122, 52, 166, 0.12); border-color:
 .auth-code-request-link {display:none; font-weight:normal; font-size:14px; line-height:20px; margin:20px 0 0 0}
 .auth-code-request-link a {border-bottom:1px dotted rgba(122, 52, 166, 0.5)}
 .auth-code-request-link a:hover {border-bottom-color:transparent}
+
+.basket-total-coupon {margin:26px 0 0 0}
+.basket-total-coupon-input::after {content:""; display:block; clear:both}
+.basket-total-coupon-input input {float:left; vertical-align:top; box-sizing:border-box; margin:0; padding:9px 10px; outline:none; width:calc(100% - 44px); height:44px; border:1px solid #d6d6d6; border-right:none; -webkit-appearance:none; color:#000; font:300 16px/24px Arial, sans-serif; border-radius:0}
+.fonts-loaded .basket-total-coupon-input input {font-family:Rubik, sans-serif}
+.basket-total-coupon-input input:hover,
+.basket-total-coupon-input input:focus {border-color:#7a34a6}
+.basket-total-coupon-input input.accept {border-color:#d6d6d6}
+
+.basket-total-coupon-input button {float:right; width:44px; margin:0; padding:0; overflow:visible; outline:none; vertical-align:top; height:44px; text-decoration:none; background:#e4d6ed url(../images/basket-total-coupon.svg) no-repeat center; color:#fff; border:none; border-radius:0; font:0px/0px Arial, sans-serif; letter-spacing:0; text-align:center; transition:all 0.2s; position:relative; -webkit-appearance:none; cursor:pointer}
+.basket-total-coupon-input button:hover {background-color:rgba(122, 52, 166, 0.12)}
+.basket-total-coupon-input button:disabled {pointer-events:none; opacity:0.5}
+
+.basket-total-coupon-list {margin:10px 0 0 -10px; font-size:0; line-height:0; letter-spacing:-1px}
+.basket-total-coupon-item {display:inline-block; vertical-align:top; margin:10px 0 0 10px; height:30px; padding:0 32px 0 10px; font-size:18px; line-height:30px; color:#000; letter-spacing:0; position:relative; background:#f0f0f0}
+.basket-total-coupon-remove {display:block; font-size:0; line-height:0; letter-spacing:-1px; position:absolute; right:0; top:0; width:32px; height:30px; background:url(../images/basket-total-coupon-remove.svg) no-repeat center; transition:all 0.2s}
+.basket-total-coupon-remove:hover {opacity:0.8}
+.basket-total-coupon-list .form-error {margin:10px 0 0 10px; height:30px; line-height:30px; display:inline-block; vertical-align:top; padding:0 10px}
+
+.bx-order-cancel textarea {display:block; vertical-align:top; box-sizing:border-box; margin:20px 0; padding:10px 12px; outline:none; width:100%; height:46px; border:1px solid #d6d6d6; -webkit-appearance:none; color:#000; font:300 16px/24px Arial, sans-serif; border-radius:0}
+.fonts-loaded .bx-order-cancel textarea {font-family:Rubik, sans-serif}
+.bx-order-cancel textarea {height:auto; overflow:auto; resize:none; padding:10px 12px; line-height:24px}
+.bx-order-cancel textarea:hover,
+.bx-order-cancel textarea:focus {border-color:#7a34a6}
+.bx-order-cancel textarea.error {border-color:#ff2f2f}
+
+.sale-order-detail-more-info-details .col {width:100%; padding:0 0 40px 0}
+.wrapper .sale-order-detail-more-info-details th {text-align:left; vertical-align:top; padding:7px 20px 6px 20px; color:#000; border-top:1px solid #ddd}
+.wrapper .sale-order-detail-more-info-details td {text-align:left; vertical-align:top; padding:7px 20px 6px 20px; color:#000; border-top:1px solid #ddd}
+.wrapper .sale-order-detail-more-info-details tr:first-child th {border-top:none}
+.wrapper .sale-order-detail-more-info-details tr:first-child td {border-top:none}
+.wrapper .sale-order-detail-more-info-details .table-responsive {padding:0}
