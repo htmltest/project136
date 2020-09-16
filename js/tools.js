@@ -177,6 +177,9 @@ $(document).ready(function() {
                         cache: false
                     }).done(function(html) {
                         $('.product-container').html(html);
+                        if ($('.product-container script').length == 1) {
+                            eval($('.product-container script').html());
+                        }
                         createProductGallery();
                         createColorsGallery();
                         $(window).trigger('resize');
@@ -210,6 +213,9 @@ $(document).ready(function() {
                 cache: false
             }).done(function(html) {
                 $('.product-container').html(html);
+                if ($('.product-container script').length == 1) {
+                    eval($('.product-container script').html());
+                }
                 createProductGallery();
                 createColorsGallery();
                 $(window).trigger('resize');
@@ -1533,3 +1539,8 @@ $(window).on('resize', function() {
         $('.window-close').css({'height': 39});
     }
 });
+
+function basketCouponError() {
+    $('.basket-total-coupon').find('.form-error').remove();
+    $('.basket-total-coupon-input').after('<div class="form-error">Ошибка. Код не найден.</div>');
+}
