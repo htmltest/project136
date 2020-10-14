@@ -2236,7 +2236,7 @@ a.catalogue-item-size:active {background:rgba(122, 52, 166, 0.12); border-color:
 .main-collection-text {font-size:16px; line-height:24px; color:#2d2d2d; margin:10px 0 0 0; max-width:210px}
 .main-collection-btn {margin:43px 0 0 0}
 .main-collection-btn .btn {height:37px; line-height:37px; font-size:14px; padding:0 30px; text-transform:uppercase}
-.main-collection-nav {margin:44px 0 0 0; font-size:0; line-height:0; letter-spacing:-1px}
+.main-collection-nav {margin:44px 0 0 0; font-size:0; line-height:0; letter-spacing:-1px; white-space:nowrap}
 .main-collection-nav ul {display:inline-block; vertical-align:top; margin:0; padding:0; list-style:none}
 .main-collection-nav ul li {display:inline-block; vertical-align:top; margin:0 0 0 10px; padding:0}
 .main-collection-nav ul li:first-child {margin:0}
@@ -2316,10 +2316,11 @@ a.catalogue-item-size:active {background:rgba(122, 52, 166, 0.12); border-color:
 .main-popular-big-item a {display:block; text-decoration:none; color:#090909}
 .main-popular-big-item a:hover {color:#7a34a6}
 .main-popular-big-item-preview {position:relative}
-.main-popular-big-item-preview::after {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:rgba(0, 0, 0, 0.4); opacity:0; transition:all 0.2s}
+.main-popular-big-item-preview::after {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:rgba(122, 52, 166, 0.14); opacity:0; transition:all 0.2s}
 .main-popular-big-item a:hover .main-popular-big-item-preview::after {opacity:1}
 .main-popular-big-item-preview img {display:block; width:100%}
 .main-popular-big-item-title {font-weight:normal; font-size:22px; line-height:24px; letter-spacing:0; margin:20px 0 0 0}
+.main-popular-big-item-title.sale {color:#7a34a6}
 .main-popular-big-item-text {font-size:16px; line-height:24px; margin:6px 0 0 0; color:#797979; letter-spacing:0}
 
 @media screen and (max-width:1079px) {
