@@ -150,14 +150,18 @@ label.error {display:block; color:#ff2f2f; font-size:13px; line-height:15px; mar
 .form-radio label.error {position:absolute; left:0; bottom:0; margin:0}
 .form-radio input.error+label.error+span {margin-bottom:17px}
 
-.form-file {margin:9px 0 0 0}
-.form-file-input {position:relative; display:inline-block; padding:0 24px 0 18px; height:37px; font-size:16px; line-height:35px; background:#7a34a6; text-align:center; overflow:hidden; cursor:pointer; color:#fff; border:1px solid #7a34a6; border-radius:0; transition:all 0.2s}
+.form-files {margin:9px 0 0 0; position:relative; padding:42px 0 0 0; min-height:42px}
+.form-file-input {position:absolute; z-index:1; left:0; top:0; display:none; width:211px; height:37px; font-size:16px; line-height:35px; background:#7a34a6; text-align:center; overflow:hidden; cursor:pointer; color:#fff; border:1px solid #7a34a6; border-radius:0; transition:all 0.2s}
 .form-file-input:hover {background:#8c39bf; color:#fff}
 .form-file-input:active {background:#7a34a6; color:#fff}
-.form-file-input::before {content:""; display:inline-block; vertical-align:middle; width:19px; height:17px; background:url(../images/file.svg) no-repeat; margin:-2px 8px 0 0}
+.form-file:last-child .form-file-input {display:block}
+.form-file-input::before {content:""; display:inline-block; vertical-align:middle; width:19px; height:17px; background:url(../images/file.svg) no-repeat; margin:-6px 8px 0 0}
 .form-file-input input {height:200px; position:absolute; top:0; right:0; opacity:0; cursor:pointer; font-size:200px; background:url(../images/blank.gif); -webkit-appearance:none}
 .form-file-input label.error {display:none !important}
-.form-file-input span {display:inline-block; vertical-align:middle; position:relative; max-width:200px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.form-file-name {font-size:16px; line-height:19px; position:relative; color:#6b6b6b}
+.form-file-name-text {padding:0 0 0 26px}
+.form-file-name-text:empty+.form-file-name-remove {display:none}
+.form-file-name-remove {position:absolute; left:0; top:1px; width:16px; height:16px; background:url(../images/form-file-name-remove.svg) no-repeat; background-size:100%; cursor:pointer}
 
 .form-captcha {margin:26px 0 0 0}
 
@@ -257,7 +261,7 @@ label.error {display:block; color:#ff2f2f; font-size:13px; line-height:15px; mar
 @media screen and (min-width:1079px) {
     .header-user:hover .header-user-icon {background-color:rgba(122, 52, 166, 0.12)}
 }
-.header-user-menu {display:none; position:absolute; width:180px; left:50%; top:100%; margin:6px 0 0 -90px; background:#fff; border:1px solid #ddd; box-shadow:0px 4px 40px rgba(0, 0, 0, 0.1); z-index:99; padding:0 25px; font-size:14px; line-height:17px}
+.header-user-menu {display:none; position:absolute; width:200px; left:50%; top:100%; margin:6px 0 0 -100px; background:#fff; border:1px solid #ddd; box-shadow:0px 4px 40px rgba(0, 0, 0, 0.1); z-index:99; padding:0 20px; font-size:14px; line-height:17px}
 @media screen and (min-width:1079px) {
     .header-user-menu::before {content:""; display:block; position:absolute; left:-1px; top:-7px; right:-1px; height:6px; background:url(../images/blank.gif)}
     .header-user-menu::after {content:""; display:block; position:absolute; left:50%; top:-11px; transform:rotate(45deg); width:22px; height:22px; background:#fff; margin-left:-11px; border:1px solid #ddd; border-right-color:#fff; border-bottom-color:#fff}
@@ -271,14 +275,15 @@ label.error {display:block; color:#ff2f2f; font-size:13px; line-height:15px; mar
 .header-user-menu ul li a {color:#848484; display:block; position:relative; padding:15px 0 16px 0}
 .header-user-menu ul li a:hover {color:#000}
 .header-user-menu ul li a:hover::after {content:""; display:block; position:absolute; left:-12px; top:10px; bottom:10px; width:2px; background:#b583d4}
+.header-user-menu ul li.active a {color:#7a34a6}
 .header-user-menu ul li a img {position:absolute; right:0; top:50%; transform:translateY(-50%); margin-top:-2px}
 
 @media screen and (max-width:1079px) {
     .header-user {float:none; position:absolute; left:50%; top:16px; margin:0 0 0 44px}
     .header-user-icon {width:40px; height:40px}
-    .header-user-menu {display:block; position:fixed; width:auto; margin:0; left:-9999px; top:-9999px; width:100%; height:100%; opacity:0; z-index:198; background:rgba(253, 253, 253, 0.81); border:none; box-shadow:none; padding:0; font-size:16px; line-height:19px; font-weight:normal; transition:opacity 0.2s}
+    .header-user-menu {display:block; position:fixed; width:auto; margin:0; left:-9999px; top:-9999px; width:100%; height:100%; overflow:auto; opacity:0; z-index:198; background:rgba(253, 253, 253, 0.81); border:none; box-shadow:none; padding:0; font-size:16px; line-height:19px; font-weight:normal; transition:opacity 0.2s}
     .mobile-user-menu-open .header-user-menu {left:0; top:0; opacity:1}
-    .header-user-menu-container {width:374px; padding:0 30px 393px 30px; background:#fff; position:absolute; right:0; top:0; bottom:0; overflow:auto; transform:translateX(100%); transition:transform 0.2s; box-shadow:-4px 0px 30px rgba(87, 87, 87, 0.1)}
+    .header-user-menu-container {width:374px; padding:0 30px 393px 30px; background:#fff; position:absolute; right:0; top:0; transform:translateX(100%); transition:transform 0.2s; box-shadow:-4px 0px 30px rgba(87, 87, 87, 0.1)}
     .mobile-user-menu-open .header-user-menu-container {transform:translateX(0)}
     .mobile-user-menu-open,
     .mobile-user-menu-open body {overflow:hidden; position:fixed; left:0; top:0; right:0; bottom:0}
@@ -681,7 +686,7 @@ label.error {display:block; color:#ff2f2f; font-size:13px; line-height:15px; mar
 .catalogue-sort::after {content:""; display:block; clear:both}
 .catalogue-sort-select {float:left; position:relative; margin:0 0 0 10px}
 .catalogue-sort-select-value {border:1px solid #d8d8d8; cursor:pointer; padding:0 38px 0 25px; font-size:14px; height:37px; line-height:35px; transition:all 0.2s; position:relative}
-.catalogue-sort-select-value::after {content:""; display:block; width:13px; height:8px; background:url(../images/arrow.svg) no-repeat; position:absolute; right:13px; top:15px}
+.catalogue-sort-select-value::after {content:""; display:block; width:13px; height:8px; background:url(../images/arrow.svg) no-repeat; position:absolute; right:13px; top:13px}
 .catalogue-sort-select-value:hover,
 .catalogue-sort-select.active .catalogue-sort-select-value {border-color:#7a34a6}
 .catalogue-sort-select-list {display:none; z-index:99; position:absolute; left:0; top:100%; width:100%; background:#fff; border:1px solid #d8d8d8; border-top:none}

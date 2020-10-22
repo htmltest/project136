@@ -20,11 +20,27 @@ $(document).ready(function() {
         var curField = curInput.parents().filter('.form-file');
         var curForm = curField.parents().filter('form');
         var curName = curInput.val().replace(/.*(\/|\\)/, '');
-        if (curName != '') {
-            curField.find('.form-file-input span').html(curName);
-        } else {
-            curField.find('.form-file-input span').html('Загрузка файла');
+        var curNameArray = curName.split('.');
+        var curExt = curNameArray[curNameArray.length - 1];
+        curNameArray.pop();
+        var curNameText = curNameArray.join('.');
+        if (curNameText.length > 10) {
+            curNameText = curNameText.substring(0, 10) + '...' + curNameText.slice(-1);
         }
+        curField.find('.form-file-name-text').html(curNameText + '.' + curExt);
+        curForm.find('.form-files').append(curForm.data('filesCode'));
+    });
+
+    $('body').on('change', '.form-file input', function() {
+        var curInput = $(this);
+        var curField = curInput.parents().filter('.form-file');
+        var curForm = curField.parents().filter('form');
+        var curName = curInput.val().replace(/.*(\/|\\)/, '');
+    });
+
+    $('body').on('click', '.form-file-name-remove', function() {
+        var curField = $(this).parents().filter('.form-file');
+        curField.remove();
     });
 
     $('form').each(function() {
@@ -1376,6 +1392,10 @@ function initForm(curForm) {
             curForm.find('.form-submit input').prop('disabled', true);
         }
     });
+
+    if (curForm.find('.form-files').length > 0) {
+        curForm.data('filesCode', curForm.find('.form-files').html());
+    }
 
     curForm.validate({
         ignore: '',

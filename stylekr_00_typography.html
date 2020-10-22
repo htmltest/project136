@@ -45,8 +45,12 @@
                             <div class="header-user-menu-container">
                                 <div class="header-user-menu-name">Дмитрий Березенский</div>
                                 <ul>
-                                    <li><a href="#">Профиль</a></li>
-                                    <li><a href="#">Мои заказы</a></li>
+                                    <li class="active"><a href="#">Личные данные</a></li>
+                                    <li><a href="#">Шкала лояльности</a></li>
+                                    <li><a href="#">Избранное</a></li>
+                                    <li><a href="#">Корзина</a></li>
+                                    <li><a href="#">Текущие заказы</a></li>
+                                    <li><a href="#">История заказов</a></li>
                                     <li><a href="#">Выход <img src="images/header-user-logout.svg" alt="" /></a></li>
                                 </ul>
                                 <div class="menu-contacts">
@@ -549,8 +553,11 @@
                     <div class="form-input"><textarea name="comment" rows="7" cols="10">В NASA называют большой удачей получение такого снимка, на котором заметны хоть какие-то детали металлического объекта, являющегося непосредственно реальным марсоходом. Чтобы сделать это фото, для начала аппарату MRO необходимо было найти Curiosity.</textarea></div>
 
                     <div class="form-label">Приложить файл (фотографию, документ)</div>
-                    <div class="form-file">
-                        <div class="form-file-input"><span>Загрузка файла</span><input type="file" name="file" /></div>
+                    <div class="form-files">
+                        <div class="form-file">
+                            <div class="form-file-input">Загрузка файла<input type="file" name="files[]" /></div>
+                            <div class="form-file-name"><div class="form-file-name-text"></div><div class="form-file-name-remove"></div></div>
+                        </div>
                     </div>
 
                     <div class="form-checkbox"><label><input type="checkbox" name="policy" checked="checked" class="required" /><span>Cогласия с обработкой персональных данных</span></label></div>
