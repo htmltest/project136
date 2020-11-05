@@ -1765,21 +1765,32 @@ a.catalogue-item-size:active {background:rgba(122, 52, 166, 0.12); border-color:
 .bx-soa-pp-company-selected img {display:none}
 .bx-soa-pp-price {float:left; font-size:16px; line-height:19px; color:#2f2f2f; font-weight:normal; margin:0 0 0 5px}
 
-.bx-soa-pp-item-container::after {content:""; display:block; clear:both}
-.bx-soa-pp-company {float:left; width:254px; height:152px; border:1px solid #d6d6d6; margin:0 20px 0 0; padding:59px 20px 0 20px; font-size:18px; line-height:21px; letter-spacing:0; color:#6b6b6b; font-weight:300; position:relative}
+.bx-soa-pp-company {float:left; width:calc(50% - 15px); min-height:162px; border:1px solid #d6d6d6; margin:0 15px 0 0; padding:59px 15px 0 15px; font-size:18px; line-height:21px; letter-spacing:0; color:#6b6b6b; font-weight:300; position:relative}
 .bx-soa-pp-company+.bx-soa-pp-company+.bx-soa-pp-company {margin-top:20px}
-#bx-soa-paysystem .bx-soa-pp-company {height:105px; padding-top:52px}
+#bx-soa-paysystem .bx-soa-pp-company {min-height:105px; padding-top:52px}
 .bx-soa-pp-company input {display:none}
 .bx-soa-pp-company.bx-selected {border-color:#7a34a6}
 .bx-soa-pp-company-image {position:absolute; left:20px; top:18px; right:0; bottom:0; background-repeat:no-repeat}
 .bx-soa-pp-delivery-cost {position:absolute; left:20px; bottom:17px; font-weight:normal; color:#7a34a6}
-.bx-soa-pp-desc-container {display:none}
+
+.bx-soa-pp::after {content:""; display:block; clear:both}
+.bx-soa-pp-item-container {float:left; width:66.66%}
+.bx-soa-pp-desc-container {float:left; width:33.33%}
+.bx-soa-pp-desc-container .bx-soa-pp-company {float:none; width:auto; margin:0}
+.bx-soa-pp-list {margin:0; padding:0; list-style:none}
+.bx-soa-pp-list li {margin:20px 0 0 0; padding:0}
+.bx-soa-pp-list li::before {display:none}
+.bx-soa-pp-list-termin {font-weight:500}
 
 @media screen and (max-width:1079px) {
     .bx-soa-pp-item-container {margin:0 0 0 -10px}
-    .bx-soa-pp-company {width:210px; height:187px; margin:0 0 0 10px; padding-top:69px}
+    .bx-soa-pp-company {width:210px; min-height:187px; margin:0 0 0 10px; padding-top:69px}
     .bx-soa-pp-company+.bx-soa-pp-company+.bx-soa-pp-company {margin-top:0}
-    #bx-soa-paysystem .bx-soa-pp-company {height:144px; padding-top:69px}
+    #bx-soa-paysystem .bx-soa-pp-company {min-height:144px; padding-top:69px}
+
+    .bx-soa-pp-item-container {float:left; width:50%}
+    .bx-soa-pp-company {float:none; width:auto; margin:0 0 20px 0}
+    .bx-soa-pp-desc-container {float:left; width:50%; padding:0 0 0 10px}
 }
 
 .bx-soa-tooltip {background:none; border-top:none; border-bottom:none; height:auto; line-height:17px; font-size:13px; font-weight:normal; margin:5px 0; color:#ff2f2f}
