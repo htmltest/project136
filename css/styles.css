@@ -2926,3 +2926,17 @@ a.catalogue-item-size:active {background:rgba(122, 52, 166, 0.12); border-color:
 .wrapper .sale-order-detail-more-info-details tr:first-child th {border-top:none}
 .wrapper .sale-order-detail-more-info-details tr:first-child td {border-top:none}
 .wrapper .sale-order-detail-more-info-details .table-responsive {padding:0}
+
+.bx-soa-coupon {display:block}
+.bx-soa-coupon {margin:26px 0 0 0}
+.bx-soa-coupon-input::after {content:""; display:block; clear:both}
+.bx-soa-coupon-input input {display:block; vertical-align:top; box-sizing:border-box; margin:0; padding:9px 10px; outline:none; width:100%; height:44px; border:1px solid #d6d6d6; -webkit-appearance:none; color:#000; font:300 16px/24px Arial, sans-serif; border-radius:0}
+.fonts-loaded .bx-soa-coupon-input input {font-family:Rubik, sans-serif}
+.bx-soa-coupon-input input:hover,
+.bx-soa-coupon-input input:focus {border-color:#7a34a6}
+
+.bx-soa-coupon-item {margin:10px 0 0 -10px; font-size:0; line-height:0; letter-spacing:-1px}
+.bx-soa-coupon-item strong {display:inline-block; vertical-align:top; margin:10px 0 0 10px; height:30px; padding:0 32px 0 10px; font-weight:300; font-size:18px; line-height:30px; color:#000; letter-spacing:0; position:relative; background:#f0f0f0}
+.bx-soa-coupon-remove {display:block; font-size:0; line-height:0; letter-spacing:-1px; position:absolute; right:0; top:0; width:32px; height:30px; background:url(../images/basket-total-coupon-remove.svg) no-repeat center; transition:all 0.2s}
+.bx-soa-coupon-remove:hover {opacity:0.8}
+.bx-soa-coupon-item .bx-soa-tooltip {margin:0 0 0 10px}
