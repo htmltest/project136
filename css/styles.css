@@ -1780,19 +1780,23 @@ a.catalogue-item-size:active {background:rgba(122, 52, 166, 0.12); border-color:
 #bx-soa-paysystem .bx-soa-pp-item-container {float:auto; width:auto}
 .bx-soa-pp-desc-container {float:left; width:33.33%}
 #bx-soa-paysystem .bx-soa-pp-desc-container {display:none}
-.bx-soa-pp-desc-container .bx-soa-pp-company {float:none; width:auto; margin:0; padding-bottom:23px; border-color:#7a34a6}
+.bx-soa-pp-desc-container .bx-soa-pp-company {float:none; width:auto; margin:0; padding-bottom:23px; border-color:#f8f8f8; background:#f8f8f8}
+.bx-soa-pp-desc-container .bx-soa-pp-company-subTitle {color:#000; font-weight:normal; font-size:18px; line-height:21px}
 .bx-soa-pp-company-desc {font-size:16px; line-height:19px; color:#6b6b6b}
 .bx-soa-pp-list {margin:0; padding:0; list-style:none}
 .bx-soa-pp-list li {margin:20px 0 0 0; padding:0}
 .bx-soa-pp-list li::before {display:none}
 .bx-soa-pp-list li a {color:#7a34a6; font-size:16px; line-height:22px}
-.bx-soa-pp-list-termin {font-weight:normal; color:#000}
+.bx-soa-pp-list-termin {font-weight:normal; color:#000; font-size:16px}
 .bx-soa-pp-list-description {color:#7a34a6; font-weight:normal}
-.elonsoft_link {margin:16px 0 0 0}
+.bx-soa-pp-list-description span {font-family:Roboto, sans-serif}
+.elonsoft_link {margin:16px 0 0 0; font-size:16px; line-height:24px}
+.elonsoft_link br {display:none}
 #elonsoft_select_address {display:block; font-size:16px; line-height:19px; color:#6b6b6b; margin:16px 0 0 0}
+#elonsoft_select_address:empty {display:none}
 .sdek_pvzLair {margin:16px 0 0 0}
 .sdek_pvzLair .btn {height:auto; line-height:24px; padding-top:9px; padding-bottom:9px}
-.sdek_pvzAddr {display:block; font-size:16px; line-height:19px; color:#6b6b6b; margin:16px 0 0 0}
+.sdek_pvzAddr {display:block; font-size:16px; line-height:19px; color:#6b6b6b; margin:16px 0 -21px 0}
 
 @media screen and (max-width:1079px) {
     .bx-soa-pp-item-container {margin:0 0 0 -10px}
@@ -1803,6 +1807,10 @@ a.catalogue-item-size:active {background:rgba(122, 52, 166, 0.12); border-color:
     .bx-soa-pp-item-container {float:left; width:50%}
     .bx-soa-pp-company {float:none; width:auto; margin:0 0 20px 0}
     .bx-soa-pp-desc-container {float:left; width:50%; padding:0 0 0 10px}
+    .bx-soa-pp-list-termin {font-size:18px}
+    .elonsoft_link {font-size:18px; line-height:27px}
+    .sdek_pvzAddr {font-size:18px}
+    .bx-soa-pp-desc-container .bx-soa-pp-company-subTitle {font-weight:300; color:#6b6b6b}
 }
 
 .bx-soa-tooltip {background:none; border-top:none; border-bottom:none; height:auto; line-height:17px; font-size:13px; font-weight:normal; margin:5px 0; color:#ff2f2f}
