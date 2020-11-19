@@ -1791,6 +1791,8 @@ a.catalogue-item-size:active {background:rgba(122, 52, 166, 0.12); border-color:
 .bx-soa-pp-list-description {color:#7a34a6; font-weight:normal}
 .bx-soa-pp-list-description span {font-family:Roboto, sans-serif}
 .elonsoft_link {margin:16px 0 0 0; font-size:16px; line-height:24px}
+.elonsoft_link .btn {height:auto; line-height:24px; padding-top:9px; padding-bottom:9px}
+.elonsoft_link a {display:none}
 .elonsoft_link br {display:none}
 #elonsoft_select_address {display:block; font-size:16px; line-height:19px; color:#6b6b6b; margin:16px 0 0 0}
 #elonsoft_select_address:empty {display:none}
