@@ -1797,7 +1797,8 @@ a.catalogue-item-size:active {background:rgba(122, 52, 166, 0.12); border-color:
 #elonsoft_select_address {display:block; font-size:16px; line-height:19px; color:#6b6b6b; margin:16px 0 0 0}
 #elonsoft_select_address:empty {display:none}
 .sdek_pvzLair {margin:16px 0 0 0}
-.sdek_pvzLair .btn {height:auto; line-height:24px; padding-top:9px; padding-bottom:9px}
+.sdek_pvzLair .btn {height:auto; line-height:24px; padding-top:9px; padding-bottom:9px; background:#02b72a; border-color:#02b72a}
+.sdek_pvzLair .btn:hover {opacity:0.8}
 .sdek_pvzAddr {display:block; font-size:16px; line-height:19px; color:#6b6b6b; margin:16px 0 -21px 0}
 
 @media screen and (max-width:1079px) {
