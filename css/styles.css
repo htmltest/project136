@@ -1306,6 +1306,16 @@ a.catalogue-item-size:active {background:rgba(122, 52, 166, 0.12); border-color:
 .slider-nav ul li a {display:block; color:#282828; font-weight:normal; font-size:14px; line-height:30px; padding:0 20px; height:30px; background:#f6ebfa; border-radius:4px; letter-spacing:0}
 .slider-nav ul li a:hover {background:#7a34a6; color:#fff}
 
+@media screen and (max-width:1280px) {
+    .slider-new .slick-prev {left:25px}
+    .slider-new .slick-next {right:25px}
+}
+
+@media screen and (max-width:1200px) {
+    .slider-new .slick-prev {left:10px}
+    .slider-new .slick-next {right:10px}
+}
+
 @media screen and (max-width:1079px) {
     .slider {margin:0 -20px; width:auto}
     .slider-item-inner {height:686px}

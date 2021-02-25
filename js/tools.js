@@ -268,12 +268,14 @@ $(document).ready(function() {
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: false,
+        prevArrow: '<button type="button" class="slick-prev"><svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="49.5" y="49.5" width="49" height="49" rx="24.5" transform="rotate(-180 49.5 49.5)" stroke="#DFDFDF"/><path d="M21 34L30 25L21 16" stroke="white"/></svg></button>',
+        nextArrow: '<button type="button" class="slick-next"><svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="49.5" y="49.5" width="49" height="49" rx="24.5" transform="rotate(-180 49.5 49.5)" stroke="#DFDFDF"/><path d="M21 34L30 25L21 16" stroke="white"/></svg></button>',
         dots: true,
         responsive: [
             {
                 breakpoint: 1079,
                 settings: {
+                    arrows: false,
                     dots: false
                 }
             }
